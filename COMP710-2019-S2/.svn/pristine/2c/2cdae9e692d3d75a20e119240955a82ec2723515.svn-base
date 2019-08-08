@@ -1,0 +1,33 @@
+#include "EnemyPool.h"
+
+EnemyPool::EnemyPool()
+	:m_pEnemies(0)
+{
+}
+EnemyPool::~EnemyPool()
+{
+}
+
+void 
+EnemyPool::Initialise(int rows, int columns, BackBuffer * backBuffer, int shiftX, int shiftY)
+{
+	//Initialise the enemy pool with a defined amount of enemies
+}
+
+void 
+EnemyPool::Process(float deltaTime)
+{
+
+}
+
+void 
+EnemyPool::Draw(BackBuffer * backBuffer)
+{
+
+}
+
+std::vector<Enemy*> 
+EnemyPool::GetEnemies()
+{
+	return m_pEnemies;
+}

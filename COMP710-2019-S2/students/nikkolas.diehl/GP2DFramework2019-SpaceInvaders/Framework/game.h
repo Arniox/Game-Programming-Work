@@ -6,9 +6,9 @@
 #include "PlayerShip.h"
 #include "Bullet.h"
 #include "Enemy.h"
-#include "Explosion.h"
 #include "fmod.hpp"
-using namespace std;
+#include "EnemyPool.h"
+#include "BulletPool.h"
 
 // Forward Declarations
 class BackBuffer;
@@ -56,8 +56,7 @@ public:
 
 	int score;
 
-	vector<Bullet*>::iterator bulletIterator;
-	vector<Enemy*>::iterator enemyIterator;
+	std::vector<Bullet*>::iterator bulletIterator;
 
 	//Fmod
 	FMOD::System* m_fmodSystem;
@@ -80,10 +79,9 @@ protected:
 	bool m_drawDebugInfo;
 	
 	// Game Entities:
+	EnemyPool* m_enemyPool;
+	BulletPool* m_bulletPool;
 	PlayerShip* m_pPlayerShip;
-	vector<Enemy*> m_pEnemies;
-	vector<Bullet*> m_pBullets;
-	vector<Explosion*> m_pExplosions;
 
 private:
 

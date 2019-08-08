@@ -38,7 +38,7 @@ Game::GetInstance()
 void 
 Game::DestroyInstance()
 {
-	delete sm_pInstance; 
+	delete sm_pInstance;
 	sm_pInstance = 0;
 }
 
@@ -63,11 +63,13 @@ Game::~Game()
 	delete m_pBackBuffer;
 	m_pBackBuffer = 0;
 
-	//Empty the enemy container
-	for (int i = 0; i < m_pEnemies.size(); i++) {
-		delete m_pEnemies[i];
-		m_pEnemies[i] = 0;
-	}
+	//Delete the enemy pool
+	delete m_enemyPool;
+	m_enemyPool = 0;
+
+	//Empty the bullet container
+	delete m_bulletPool;
+	m_bulletPool = 0;
 
 	//Empty sound
 	UnloadFMOD();
@@ -108,33 +110,28 @@ Game::Initialise()
 
 	m_pBackBuffer->SetClearColour(0xCC, 0xCC, 0xCC);
 
-	// SS04.4: Create the player ship instance.
-	m_pPlayerShip = new PlayerShip;
-	m_pPlayerShip->Initialise(m_pBackBuffer->CreateSprite("assets/Sprites/playership.png"));
 
-	// SS04.5: Spawn four rows of 14 alien enemies.
-	int columns = 14;
-	int rows = 4;
-	int entityCount = 0;
-	
+	//--------------Member data---------------------
+
 	//Set shift values for centering things
 	float shiftX = (screenWidth / 2) - 700;
 	float shiftY = 100;
-	
-	//For all enemies
-	for (int i = 0; i < rows; i++) {
-		for (int k = 0; k < columns; k++) {
-			m_pEnemies.push_back(new Enemy());
-			m_pEnemies.at(entityCount)->Initialise(m_pBackBuffer->CreateSprite("assets/Sprites/alienenemy.png"));
-			m_pEnemies.at(entityCount)->SetCenter(k * 100 + shiftX, i * 100 + shiftY);
 
-			entityCount++;
-		}
-	}
-
+	//Create the player ship instance.
+	m_pPlayerShip = new PlayerShip;
+	m_pPlayerShip->Initialise(m_pBackBuffer->CreateSprite("assets/Sprites/playership.png"));
 	//Set play position
-	m_pPlayerShip->SetPositionX(screenWidth/2);
-	m_pPlayerShip->SetPositionY(screenHeight-100);
+	m_pPlayerShip->SetPositionX(screenWidth / 2);
+	m_pPlayerShip->SetPositionY(screenHeight - 100);
+	
+	//Init the enemy pool
+	int rows = 4;
+	int columns = 14;
+	m_enemyPool = new EnemyPool();
+	m_enemyPool->Initialise(rows, columns, m_pBackBuffer, shiftX, shiftY);
+	//Init the bullet pool
+	m_bulletPool = new BulletPool();
+	m_bulletPool->Initialise(m_pBackBuffer);
 
 	return (true);
 }
@@ -199,49 +196,15 @@ Game::Process(float deltaTime)
 	}
 
 	// Update the game world simulation:
-
-	//For sound
-	m_fmodSystem->update();
-
-	// For Player
-	m_pPlayerShip->Process(deltaTime, screenWidth, screenHeight, moveRight, moveLeft);
-
-	//Process shooting
-	if (shoot) {
-		m_pBullets.push_back(new Bullet());
-		m_pBullets.back()->Initialise(m_pBackBuffer->CreateSprite("assets/Sprites/playerbullet.png"));
-
-		m_pBullets.back()->SetCenter(m_pPlayerShip->GetPositionX(), m_pPlayerShip->GetPositionY());
-		shoot = false;
-
-		//Play fire
-		m_fmodSystem->playSound(sFireSound, 0, false, 0);
-	}
-
-	// Process each bullet in the container.
-	float bulletVelocity = 150;
-	for (int k = 0; k < m_pBullets.size(); k++) {
-		float currentY = m_pBullets.at(k)->GetPositionY();
-		m_pBullets.at(k)->SetPositionY(currentY - bulletVelocity * deltaTime);
-
-		if (m_pBullets.at(k)->GetPositionY() < 15) {
-			m_pBullets.at(k)->dead = true;
-		}
-	}
-	// For each bullet
-	for (int k = 0; k < m_pBullets.size(); k++) {
-		m_pBullets.at(k)->Process(deltaTime);
-	}
-
-	// Process each alien enemy in the container.	
-	for (int i = 0; i < m_pEnemies.size(); i++) {
-		for (int k = 0; k < m_pBullets.size(); k++) {
+	// Process death collision	
+	for (int i = 0; i < m_enemyPool->GetEnemies().size(); i++) {
+		for (int k = 0; k < m_bulletPool->GetBullets().size(); k++) {
 			//If the two objects are right next to eachother (each is roughly 15 pixels big)
-			float distance = sqrt(pow(m_pBullets.at(k)->GetPositionX() - m_pEnemies.at(i)->GetPositionX(), 2) + pow(m_pBullets.at(k)->GetPositionY() - m_pEnemies.at(i)->GetPositionY(), 2)) - 15 - 5;
+			float distance = sqrt(pow(m_bulletPool->GetBulletAt(k)->GetPositionX() - m_enemyPool->GetEnemyAt(i)->GetPositionX(), 2) + pow(m_bulletPool->GetBulletAt(k)->GetPositionY() - m_enemyPool->GetEnemyAt(i)->GetPositionY(), 2)) - 15 - 5;
 			if (distance < 3) {
 				//Delete at index
-				m_pEnemies.at(i)->dead = true;
-				m_pBullets.at(k)->dead = true;
+				m_enemyPool->GetEnemyAt(i)->dead = true;
+				m_bulletPool->GetBulletAt(k)->dead = true;
 
 				score++;
 
@@ -251,39 +214,14 @@ Game::Process(float deltaTime)
 		}
 	}
 
-	// For each alien enemy
-	for (int k = 0; k < m_pEnemies.size(); k++) {
-		m_pEnemies.at(k)->Process(deltaTime);
-	}
-
-	//Delete bullets that are dead
-	bulletIterator = m_pBullets.begin();
-	while (bulletIterator != m_pBullets.end()) {
-		if ((*bulletIterator)->dead) {
-			delete (*bulletIterator);
-			bulletIterator = m_pBullets.erase(bulletIterator);
-		}
-		else {
-			bulletIterator++;
-		}
-	}
-
-	//Delete enemies that are dead
-	enemyIterator = m_pEnemies.begin();
-	while (enemyIterator != m_pEnemies.end()) {
-		if ((*enemyIterator)->dead) {
-			delete (*enemyIterator);
-			enemyIterator = m_pEnemies.erase(enemyIterator);
-		}
-		else {
-			enemyIterator++;
-		}
-	}
-
-	//If win state
-	if (m_pEnemies.size() <= 0) {
-		drawGame = false;
-	}
+	//Process enemies
+	m_enemyPool->Process(deltaTime);
+	//Process bullets
+	m_bulletPool->Process(m_fmodSystem, sFireSound, deltaTime, shoot, m_pPlayerShip->GetPositionX(), m_pPlayerShip->GetPositionY());
+	//Process Player
+	m_pPlayerShip->Process(deltaTime, screenWidth, screenHeight, moveRight, moveLeft);
+	//Process sound
+	m_fmodSystem->update();
 }
 
 void 
@@ -295,15 +233,10 @@ Game::Draw(BackBuffer& backBuffer)
 	backBuffer.SetClearColour(0, 0, 0);
 
 	if (drawGame) {
-		// SS04.5: Draw all enemy aliens in container...
-		for (int i = 0; i < m_pEnemies.size(); i++) {
-			m_pEnemies.at(i)->Draw(backBuffer);
-		}
-
-		// SS04.6: Draw all bullets in container...
-		for (int i = 0; i < m_pBullets.size(); i++) {
-			m_pBullets.at(i)->Draw(backBuffer);
-		}
+		//Draw enemies in enemy pool
+		m_enemyPool->Draw(backBuffer);
+		//Draw all bullets in container...
+		m_bulletPool->Draw(backBuffer);
 
 		// SS04.4: Draw the player ship...
 		m_pPlayerShip->Draw(backBuffer);
