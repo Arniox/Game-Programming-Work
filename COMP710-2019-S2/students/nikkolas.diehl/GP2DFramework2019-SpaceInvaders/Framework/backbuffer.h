@@ -2,6 +2,7 @@
 #ifndef __BACKBUFFER_H__
 #define __BACKBUFFER_H__
 #include "SDL_ttf.h"
+#include "animatedsprite.h"
 
 // Forward Declarations:
 class TextureManager;
@@ -29,11 +30,12 @@ public:
 	void SetDrawColour(unsigned char r, unsigned char g, unsigned char b, unsigned char a);
 
 	void DrawSprite(Sprite& sprite);
-	void DrawAnimatedSprite(Sprite& sprite);
+	void DrawAnimatedSprite(AnimatedSprite& sprite);
 	void DrawRectangle(int x1, int y1, int x2, int y2);
 	void DrawLine(int x1, int y1, int x2, int y2);
 
 	Sprite* CreateSprite(const char* pcFilename);
+	AnimatedSprite* CreateAnimatedSprite(const char* pcFilename, int frameCount, float frameSpeed);
 	
 protected:
 	void LogSDLError();

@@ -4,6 +4,7 @@
 #define __ANIMATEDSPRITE_H__
 
 #include "sprite.h"
+#include <vector>
 
 class BackBuffer;
 class Texture;
@@ -24,6 +25,8 @@ public:
 	void SetFrameSpeed(float f);
 	void SetFrameWidth(int w);
 
+	int GetFrameWidth();
+
 	void Pause();
 	bool IsPaused();
 
@@ -33,6 +36,8 @@ public:
 	bool IsLooping();
 	void SetLooping(bool b);
 
+	int AnimatedSprite::GetFrameCoords();
+
 protected:
 
 private:
@@ -41,7 +46,8 @@ private:
 public:
 
 protected:
-	// SS05.5: Add a field, the container for frame coordinates.
+	//Container for frame coordinates.
+	std::vector<int> frameCoordinates;
 
 	float m_frameSpeed;
 	int m_frameWidth;

@@ -61,7 +61,7 @@ BulletPool::Process(FMOD::System* m_fmodSystem, FMOD::Sound* sFireSound, float d
 }
 
 void 
-BulletPool::Draw(BackBuffer & backBuffer)
+BulletPool::Draw(BackBuffer& backBuffer)
 {
 	//Draw each bullet if they alive
 	for (int i = 0; i < m_pBullets.size(); i++) {

@@ -1,6 +1,15 @@
-﻿  BulletPool.cpp
-s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\bulletpool.cpp(11): warning C4018: '<': signed/unsigned mismatch
-s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\bulletpool.cpp(48): warning C4018: '<': signed/unsigned mismatch
-s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\bulletpool.cpp(67): warning C4018: '<': signed/unsigned mismatch
-s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\bulletpool.cpp(90): warning C4018: '<': signed/unsigned mismatch
+﻿  game.cpp
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(138): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(214): warning C4018: '<': signed/unsigned mismatch
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(215): warning C4018: '<': signed/unsigned mismatch
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(230): warning C4244: 'argument': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(231): warning C4244: 'argument': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
   Framework.vcxproj -> S:\Aut Work\Year 3\Semester 2\Game Programming\Game-Programming-Work\COMP710-2019-S2\students\nikkolas.diehl\GP2DFramework2019-SpaceInvaders\Debug\Framework.exe

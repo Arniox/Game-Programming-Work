@@ -9,6 +9,7 @@
 #include "fmod.hpp"
 #include "EnemyPool.h"
 #include "BulletPool.h"
+#include "ExplosionPool.h"
 
 // Forward Declarations
 class BackBuffer;
@@ -50,11 +51,13 @@ private:
 public:
 	//Entity data
 	bool shoot = false;
+	bool explode = false;
 	bool moveRight = false;
 	bool moveLeft = false;
 	bool drawGame = true;
 
 	int score;
+	int count;
 
 	std::vector<Bullet*>::iterator bulletIterator;
 
@@ -81,6 +84,10 @@ protected:
 	// Game Entities:
 	EnemyPool* m_enemyPool;
 	BulletPool* m_bulletPool;
+	ExplosionPool* m_explosionPool;
+
+	std::vector<std::vector<int>*> m_explosionCoords;
+
 	PlayerShip* m_pPlayerShip;
 
 private:

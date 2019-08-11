@@ -7,6 +7,7 @@
 #include "logmanager.h"
 #include "texturemanager.h"
 #include "sprite.h"
+#include "animatedsprite.h"
 #include "texture.h"
 
 // Library includes:
@@ -159,9 +160,23 @@ BackBuffer::DrawSprite(Sprite& sprite)
 	SDL_RenderCopy(m_pRenderer, sprite.GetTexture()->GetTexture(), 0, &dest);
 }
 
-void DrawAnimatedSprite(Sprite& sprite) 
+void BackBuffer::DrawAnimatedSprite(AnimatedSprite & animatedSprite)
 {
+	SDL_Rect dest;
+	SDL_Rect src;
 
+	src.x = animatedSprite.GetFrameCoords();
+	src.y = 0;
+	src.w = animatedSprite.GetFrameWidth();
+	src.h = animatedSprite.GetHeight();
+
+	dest.x = animatedSprite.GetX();
+	dest.y = animatedSprite.GetY();
+	dest.w = animatedSprite.GetFrameWidth();
+	dest.h = animatedSprite.GetHeight();
+
+	SDL_RenderCopy(m_pRenderer, animatedSprite.GetTexture()->GetTexture(), &src, &dest);
+	
 }
 
 void
@@ -240,6 +255,30 @@ BackBuffer::CreateSprite(const char* pcFilename)
 	}
 
 	return (pSprite);
+}
+
+AnimatedSprite*
+BackBuffer::CreateAnimatedSprite(const char* pcFilename, int frameCount, float frameWidth)
+{
+	assert(m_pTextureManager);
+	Texture* pTexture = m_pTextureManager->GetTexture(pcFilename);
+
+	AnimatedSprite* pAnimatedSprite = new AnimatedSprite();
+
+	if (!pAnimatedSprite->Initialise(*pTexture))
+	{
+		LogManager::GetInstance().Log("Sprite Failed to Create!");
+	}
+	else 
+	{
+		pAnimatedSprite->SetFrameWidth(frameWidth);
+		pAnimatedSprite->SetFrameSpeed(24);
+		for (int i = 0; i < frameCount; ++i) {
+			pAnimatedSprite->AddFrame(i*frameWidth);
+		}
+	}
+
+	return (pAnimatedSprite);
 }
 
 void 

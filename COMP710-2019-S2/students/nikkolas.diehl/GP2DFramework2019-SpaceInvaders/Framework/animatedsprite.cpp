@@ -29,6 +29,7 @@ AnimatedSprite::Initialise(Texture& texture)
 {
 	m_frameWidth = 0;
 	m_frameSpeed = 0;
+	m_currentFrame = 0;
 
 	m_loop = false;
 	m_paused = false;
@@ -44,34 +45,41 @@ AnimatedSprite::Initialise(Texture& texture)
 void
 AnimatedSprite::AddFrame(int x)
 {
-	// SS05.5: Add the x coordinate to the frame coordinate container.
+	//Add the x coordinate to the frame coordinate container.
+	frameCoordinates.push_back(x);
 }
 
 void
 AnimatedSprite::Process(float deltaTime)
 {
-	// SS05.5: If not paused...
-	// SS05.5: Count the time elapsed.
+	//If not paused...
+	if (!m_paused) {
+		if (m_animating) {
+			//Count the time elapsed.
+			m_timeElapsed++;
 
-	// SS05.5: If the time elapsed is greater than the frame speed.
+			//If the time elapsed is greater than the frame speed move to the next frame
+			if (m_timeElapsed > m_frameSpeed) {
+				m_currentFrame++;
+				m_timeElapsed = 0;
+			}
 
-	// SS05.5: Move to the next frame.
-	// SS05.5: Reset the time elapsed counter.
+			//If the current frame is greater than the number of frame in this animation
+			if (m_currentFrame >= frameCoordinates.size()) {
+				m_currentFrame = 0;
+				//m_animating = false;
+			}
 
-	// SS05.5: If the current frame is greater than the number 
-	//          of frame in this animation...
-	// SS05.5: Reset to the first frame.
-
-	// SS05.5: Stop the animation if it is not looping...
+			//Change frame
+			m_x = frameCoordinates.at(m_currentFrame);
+		}
+	}
 }
 
 void
 AnimatedSprite::Draw(BackBuffer& backbuffer)
 {
-	// SS05.5: Draw the particular frame into the backbuffer.
-
-	//          What is the current frame's x coordinate?
-	//          What is the frame width?
+	backbuffer.DrawAnimatedSprite(*this);
 }
 
 void
@@ -84,6 +92,18 @@ void
 AnimatedSprite::SetFrameWidth(int w)
 {
 	m_frameWidth = w;
+}
+
+int 
+AnimatedSprite::GetFrameCoords()
+{
+	return frameCoordinates.at(m_currentFrame);
+}
+
+int 
+AnimatedSprite::GetFrameWidth()
+{
+	return m_frameWidth;
 }
 
 void
@@ -124,3 +144,4 @@ AnimatedSprite::SetLooping(bool b)
 {
 	m_loop = b;
 }
+

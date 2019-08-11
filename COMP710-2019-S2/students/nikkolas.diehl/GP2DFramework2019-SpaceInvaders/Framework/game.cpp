@@ -67,9 +67,16 @@ Game::~Game()
 	delete m_enemyPool;
 	m_enemyPool = 0;
 
-	//Empty the bullet container
+	//Empty the bullet pool
 	delete m_bulletPool;
 	m_bulletPool = 0;
+
+	//Empty the explosion pool
+	delete m_explosionPool;
+	m_explosionPool = 0;
+
+	//Delete explosion coords
+	m_explosionCoords.empty();
 
 	//Empty sound
 	UnloadFMOD();
@@ -132,6 +139,9 @@ Game::Initialise()
 	//Init the bullet pool
 	m_bulletPool = new BulletPool();
 	m_bulletPool->Initialise(m_pBackBuffer);
+	//Init the explosion pool
+	m_explosionPool = new ExplosionPool();
+	m_explosionPool->Initialise(m_pBackBuffer);
 
 	return (true);
 }
@@ -196,20 +206,31 @@ Game::Process(float deltaTime)
 	}
 
 	// Update the game world simulation:
-	// Process death collision	
+	float bulletX = 0;
+	float bulletY = 0;
+	float enemyX = 0;
+	float enemyY = 0;
+	// Process death collision
 	for (int i = 0; i < m_enemyPool->GetEnemies().size(); i++) {
 		for (int k = 0; k < m_bulletPool->GetBullets().size(); k++) {
 			//If the two objects are right next to eachother (each is roughly 15 pixels big)
-			float distance = sqrt(pow(m_bulletPool->GetBulletAt(k)->GetPositionX() - m_enemyPool->GetEnemyAt(i)->GetPositionX(), 2) + pow(m_bulletPool->GetBulletAt(k)->GetPositionY() - m_enemyPool->GetEnemyAt(i)->GetPositionY(), 2)) - 15 - 5;
+			bulletX = m_bulletPool->GetBulletAt(k)->GetPositionX();
+			bulletY = m_bulletPool->GetBulletAt(k)->GetPositionY();
+			enemyX = m_enemyPool->GetEnemyAt(i)->GetPositionX();
+			enemyY = m_enemyPool->GetEnemyAt(i)->GetPositionY();
+			float distance = sqrt(pow(bulletX - enemyX, 2) + pow(bulletY - enemyY, 2)) - 15 - 5;
 			if (distance < 3) {
+				count++;
 				//Delete at index
 				m_enemyPool->GetEnemyAt(i)->dead = true;
 				m_bulletPool->GetBulletAt(k)->dead = true;
+				explode = true;
+				//Save the x and y coords of all the explosions
+				m_explosionCoords.push_back(new std::vector<int>);
+				m_explosionCoords.back()->push_back(enemyX-10);
+				m_explosionCoords.back()->push_back(enemyY-10);
 
 				score++;
-
-				//Play explosion
-				m_fmodSystem->playSound(sExplosionSound, 0, false, 0);
 			}
 		}
 	}
@@ -218,6 +239,8 @@ Game::Process(float deltaTime)
 	m_enemyPool->Process(deltaTime);
 	//Process bullets
 	m_bulletPool->Process(m_fmodSystem, sFireSound, deltaTime, shoot, m_pPlayerShip->GetPositionX(), m_pPlayerShip->GetPositionY());
+	//Process Explosions
+	m_explosionPool->Process(m_fmodSystem, sExplosionSound, deltaTime, explode, m_explosionCoords);
 	//Process Player
 	m_pPlayerShip->Process(deltaTime, screenWidth, screenHeight, moveRight, moveLeft);
 	//Process sound
@@ -237,8 +260,10 @@ Game::Draw(BackBuffer& backBuffer)
 		m_enemyPool->Draw(backBuffer);
 		//Draw all bullets in container...
 		m_bulletPool->Draw(backBuffer);
+		//Draw all explosions
+		m_explosionPool->Draw(backBuffer);
 
-		// SS04.4: Draw the player ship...
+		//Draw the player ship...
 		m_pPlayerShip->Draw(backBuffer);
 	}
 	else {

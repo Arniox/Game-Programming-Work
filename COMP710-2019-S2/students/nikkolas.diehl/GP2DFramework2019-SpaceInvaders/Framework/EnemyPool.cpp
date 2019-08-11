@@ -9,8 +9,8 @@ EnemyPool::~EnemyPool()
 {
 	//Destroy and clean the enemy pool
 	for (int i = 0; i < m_pEnemies.size(); i++) {
-		delete m_pEnemies[i];
-		m_pEnemies[i] = 0;
+		delete m_pEnemies.at(i);
+		m_pEnemies.at(i) = 0;
 	}
 }
 

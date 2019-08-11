@@ -88,6 +88,8 @@
     <ClInclude Include="Enemy.h" />
     <ClInclude Include="EnemyPool.h" />
     <ClInclude Include="entity.h" />
+    <ClInclude Include="Explosion.h" />
+    <ClInclude Include="ExplosionPool.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="inputhandler.h" />
     <ClInclude Include="logmanager.h" />
@@ -105,6 +107,8 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="EnemyPool.cpp" />
     <ClCompile Include="entity.cpp" />
+    <ClCompile Include="Explosion.cpp" />
+    <ClCompile Include="ExplosionPool.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="inputhandler.cpp" />
     <ClCompile Include="logmanager.cpp" />

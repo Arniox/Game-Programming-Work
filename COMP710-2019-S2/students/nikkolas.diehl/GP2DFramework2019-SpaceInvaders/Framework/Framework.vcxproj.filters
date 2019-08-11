@@ -76,7 +76,13 @@
       <Filter>Header Files\FrameWork</Filter>
     </ClInclude>
     <ClInclude Include="BulletPool.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\EntityControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplosionPool.h">
+      <Filter>Header Files\EntityControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="Explosion.h">
+      <Filter>Header Files\Entities</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -123,7 +129,13 @@
       <Filter>Source Files\FrameWork</Filter>
     </ClCompile>
     <ClCompile Include="BulletPool.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\EntityControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="ExplosionPool.cpp">
+      <Filter>Source Files\EntityControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="Explosion.cpp">
+      <Filter>Source Files\Entities</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
