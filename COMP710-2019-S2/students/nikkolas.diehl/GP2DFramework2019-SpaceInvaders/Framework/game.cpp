@@ -19,8 +19,6 @@ using namespace std;
 
 // Static Members:
 Game* Game::sm_pInstance = 0;
-const int screenWidth = 1280;
-const int screenHeight = 720;
 
 Game&
 Game::GetInstance()
@@ -95,8 +93,15 @@ Game::~Game()
 bool 
 Game::Initialise()
 {
+	//--------------File Parser---------------------
+	iniParser = new IniParser();
+	screenWidth = iniParser->GetValueAsInt("Main", "windowWidth");
+	screenHeight = iniParser->GetValueAsInt("Main", "windowHeight");
+	fullScreen = iniParser->GetValueAsBoolean("Main", "fullScreen");
+
+
 	m_pBackBuffer = new BackBuffer();
-	if (!m_pBackBuffer->Initialise(screenWidth, screenHeight))
+	if (!m_pBackBuffer->Initialise(screenWidth, screenHeight, fullScreen))
 	{
 		LogManager::GetInstance().Log("BackBuffer Init Fail!");
 		return (false);
@@ -117,25 +122,24 @@ Game::Initialise()
 
 	m_pBackBuffer->SetClearColour(0xCC, 0xCC, 0xCC);
 
-
 	//--------------Member data---------------------
 
 	//Set shift values for centering things
-	float shiftX = (screenWidth / 2) - 700;
-	float shiftY = 100;
+	int rows = 4;
+	int columns = 14;
+	float shiftX = (screenWidth / 2) - ((columns / 2)*(screenWidth/10));
+	float shiftY = (screenHeight/10);
 
 	//Create the player ship instance.
 	m_pPlayerShip = new PlayerShip;
 	m_pPlayerShip->Initialise(m_pBackBuffer->CreateSprite("assets/Sprites/playership.png"));
 	//Set play position
 	m_pPlayerShip->SetPositionX(screenWidth / 2);
-	m_pPlayerShip->SetPositionY(screenHeight - 100);
+	m_pPlayerShip->SetPositionY(screenHeight - (screenHeight)/10);
 	
 	//Init the enemy pool
-	int rows = 4;
-	int columns = 14;
 	m_enemyPool = new EnemyPool();
-	m_enemyPool->Initialise(rows, columns, m_pBackBuffer, shiftX, shiftY);
+	m_enemyPool->Initialise(rows, columns, m_pBackBuffer, shiftX, shiftY, screenWidth, screenHeight);
 	//Init the bullet pool
 	m_bulletPool = new BulletPool();
 	m_bulletPool->Initialise(m_pBackBuffer);
@@ -220,7 +224,6 @@ Game::Process(float deltaTime)
 			enemyY = m_enemyPool->GetEnemyAt(i)->GetPositionY();
 			float distance = sqrt(pow(bulletX - enemyX, 2) + pow(bulletY - enemyY, 2)) - 15 - 5;
 			if (distance < 3) {
-				count++;
 				//Delete at index
 				m_enemyPool->GetEnemyAt(i)->dead = true;
 				m_bulletPool->GetBulletAt(k)->dead = true;
@@ -251,6 +254,7 @@ void
 Game::Draw(BackBuffer& backBuffer)
 {
 	++m_frameCount;
+	++m_totalFramesPassed;
 
 	backBuffer.Clear();
 	backBuffer.SetClearColour(0, 0, 0);
@@ -270,9 +274,15 @@ Game::Draw(BackBuffer& backBuffer)
 		//Win State
 	}
 	
-	//Draw Text
-	backBuffer.SetTextColour(255, 0, 0);
-	backBuffer.DrawText(20, 50, "Space Invaders!!!");
+	//Draw Text for title
+	backBuffer.SetTextColour(255, 255, 255);
+	string titleOutPut = "Space Invaders! Score: " + to_string(score);
+	backBuffer.DrawText(20, 50, titleOutPut.c_str());
+
+	//Draw Text for fps
+	backBuffer.SetTextColour(255, 255, 255);
+	string fps = "Fps: " + to_string(m_FPS) + " | frameCount: " + to_string(m_totalFramesPassed);
+	backBuffer.DrawText(screenWidth/2, 50, fps.c_str());
 
 	backBuffer.Present();
 }

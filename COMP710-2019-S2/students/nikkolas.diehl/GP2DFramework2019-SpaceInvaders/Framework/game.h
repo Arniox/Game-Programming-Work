@@ -10,6 +10,7 @@
 #include "EnemyPool.h"
 #include "BulletPool.h"
 #include "ExplosionPool.h"
+#include "iniParser.h"
 
 // Forward Declarations
 class BackBuffer;
@@ -37,6 +38,9 @@ public:
 	FMOD::Sound* sExplosionSound;
 	FMOD::Sound* sMoveSound;
 
+	//Ini parser
+	IniParser* iniParser;
+
 protected:
 	void Process(float deltaTime);
 	void Draw(BackBuffer& backBuffer);
@@ -49,6 +53,14 @@ private:
 
 	//Member Data:
 public:
+	//Main data
+	int screenWidth;
+	int screenHeight;
+	bool fullScreen;
+
+	//Outputs
+	string* titleOutPut;
+
 	//Entity data
 	bool shoot = false;
 	bool explode = false;
@@ -57,7 +69,6 @@ public:
 	bool drawGame = true;
 
 	int score;
-	int count;
 
 	std::vector<Bullet*>::iterator bulletIterator;
 
@@ -77,6 +88,7 @@ protected:
 	float m_executionTime;
 	__int64 m_lastTime;
 	int m_frameCount;
+	int m_totalFramesPassed;
 	int m_FPS;
 	int m_numUpdates;
 	bool m_drawDebugInfo;

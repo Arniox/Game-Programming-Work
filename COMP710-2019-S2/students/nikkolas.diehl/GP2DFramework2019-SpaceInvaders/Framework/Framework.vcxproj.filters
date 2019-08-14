@@ -31,6 +31,12 @@
     <Filter Include="Source Files\FrameWork">
       <UniqueIdentifier>{372bd068-aba2-45fc-9977-adf807faabb5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Parsers">
+      <UniqueIdentifier>{2ca7abb3-8200-4038-8ee7-df388b7486c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Parsers">
+      <UniqueIdentifier>{dbbb9d4a-5947-458e-b763-b62e979365ee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="backbuffer.h">
@@ -84,6 +90,9 @@
     <ClInclude Include="Explosion.h">
       <Filter>Header Files\Entities</Filter>
     </ClInclude>
+    <ClInclude Include="iniParser.h">
+      <Filter>Header Files\Parsers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="backbuffer.cpp">
@@ -136,6 +145,9 @@
     </ClCompile>
     <ClCompile Include="Explosion.cpp">
       <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="iniParser.cpp">
+      <Filter>Source Files\Parsers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

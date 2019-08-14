@@ -52,7 +52,7 @@ BackBuffer::~BackBuffer()
 }
 
 bool 
-BackBuffer::Initialise(int width, int height)
+BackBuffer::Initialise(int width, int height, bool fullScreen)
 {
 	m_width = width;
 	m_height = height;
@@ -93,11 +93,11 @@ BackBuffer::Initialise(int width, int height)
 		}
 	}
 
-	SetFullscreen(false);
+	SetFullscreen(fullScreen);
 	SDL_Delay(1000);
 
 	TTF_Init();
-	m_pDebugFont = TTF_OpenFont("assets\\Bad_Signal.otf", 40); //Font from Dafont
+	m_pDebugFont = TTF_OpenFont("assets\\space Xrebron.ttf", 30); //Font from Dafont
 
 	m_pTextureManager = new TextureManager();
 	assert(m_pTextureManager);

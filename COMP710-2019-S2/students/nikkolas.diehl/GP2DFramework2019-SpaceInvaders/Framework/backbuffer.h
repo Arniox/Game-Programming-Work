@@ -17,7 +17,7 @@ public:
 	BackBuffer();
 	~BackBuffer();
 
-	bool Initialise(int width, int height);
+	bool Initialise(int width, int height, bool fullScreen);
 
 	void Clear();
 	void Present();

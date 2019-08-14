@@ -15,7 +15,7 @@ EnemyPool::~EnemyPool()
 }
 
 void 
-EnemyPool::Initialise(int rows, int columns, BackBuffer* m_pBackBuffer, int shiftX, int shiftY)
+EnemyPool::Initialise(int rows, int columns, BackBuffer* m_pBackBuffer, int shiftX, int shiftY, int screenWidth, int screenHeight)
 {
 	//Initialise the enemy pool with a defined amount of enemies
 	int entityCount = 0;
@@ -24,7 +24,7 @@ EnemyPool::Initialise(int rows, int columns, BackBuffer* m_pBackBuffer, int shif
 		for (int k = 0; k < columns; k++) {
 			m_pEnemies.push_back(new Enemy());
 			m_pEnemies.at(entityCount)->Initialise(m_pBackBuffer->CreateSprite("assets/Sprites/alienenemy.png"));
-			m_pEnemies.at(entityCount)->SetCenter(k * 100 + shiftX, i * 100 + shiftY);
+			m_pEnemies.at(entityCount)->SetCenter(k * (screenWidth/10) + shiftX, i * (screenHeight / 10) + shiftY);
 
 			entityCount++;
 		}

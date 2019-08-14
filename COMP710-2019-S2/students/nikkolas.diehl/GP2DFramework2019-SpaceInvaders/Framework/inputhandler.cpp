@@ -60,10 +60,10 @@ InputHandler::ProcessInput(Game& game)
 				game.Quit();
 			}
 			if (event.key.keysym.sym == SDLK_d) {
-				game.moveLeft = true;
+				game.moveRight = true;
 			}
 			if (event.key.keysym.sym == SDLK_a) {
-				game.moveRight = true;
+				game.moveLeft = true;
 			}
 			if (event.key.keysym.sym == SDLK_e) {
 				game.shoot = true;
@@ -71,10 +71,10 @@ InputHandler::ProcessInput(Game& game)
 		}
 		else if (event.type = SDL_KEYUP) {
 			if (event.key.keysym.sym == SDLK_d) {
-				game.moveLeft = false;
+				game.moveRight = false;
 			}
 			if (event.key.keysym.sym == SDLK_a) {
-				game.moveRight = false;
+				game.moveLeft = false;
 			}
 			if (event.key.keysym.sym == SDLK_e) {
 				game.shoot = false;

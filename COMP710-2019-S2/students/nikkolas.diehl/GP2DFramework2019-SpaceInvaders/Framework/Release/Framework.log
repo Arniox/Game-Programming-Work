@@ -1,0 +1,29 @@
+﻿  BulletPool.cpp
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\bulletpool.cpp(11): warning C4018: '<': signed/unsigned mismatch
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\bulletpool.cpp(48): warning C4018: '<': signed/unsigned mismatch
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\bulletpool.cpp(68): warning C4018: '<': signed/unsigned mismatch
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\bulletpool.cpp(91): warning C4018: '<': signed/unsigned mismatch
+  game.cpp
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(130): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(131): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(137): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(138): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(142): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(218): warning C4018: '<': signed/unsigned mismatch
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(219): warning C4018: '<': signed/unsigned mismatch
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(233): warning C4244: 'argument': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(234): warning C4244: 'argument': conversion from 'float' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+  Generating code
+  4 of 957 functions ( 0.4%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    4 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Framework.vcxproj -> S:\Aut Work\Year 3\Semester 2\Game Programming\Game-Programming-Work\COMP710-2019-S2\students\nikkolas.diehl\GP2DFramework2019-SpaceInvaders\Release\Framework.exe
