@@ -1,19 +1,44 @@
-﻿  game.cpp
-s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(130): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(131): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(137): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(138): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(142): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(218): warning C4018: '<': signed/unsigned mismatch
-s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(219): warning C4018: '<': signed/unsigned mismatch
-s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(233): warning C4244: 'argument': conversion from 'float' to '_Ty', possible loss of data
+﻿  ExplosionParticle.cpp
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\explosionparticle.cpp(29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\explosionparticle.cpp(30): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\explosionparticle.cpp(31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\explosionparticle.cpp(34): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\explosionparticle.cpp(56): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\explosionparticle.cpp(65): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  InGameScene.cpp
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\ingamescene.cpp(52): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\ingamescene.cpp(53): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\ingamescene.cpp(59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\ingamescene.cpp(60): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\ingamescene.cpp(64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\ingamescene.cpp(85): warning C4018: '<': signed/unsigned mismatch
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\ingamescene.cpp(86): warning C4018: '<': signed/unsigned mismatch
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\ingamescene.cpp(100): warning C4244: 'argument': conversion from 'float' to 'const _Ty', possible loss of data
           with
           [
               _Ty=int
           ]
-s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(234): warning C4244: 'argument': conversion from 'float' to '_Ty', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\ingamescene.cpp(101): warning C4244: 'argument': conversion from 'float' to 'const _Ty', possible loss of data
           with
           [
               _Ty=int
           ]
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\ingamescene.cpp(151): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  ParticleManager.cpp
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\particlemanager.cpp(20): warning C4018: '<': signed/unsigned mismatch
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\particlemanager.cpp(36): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\particlemanager.cpp(54): warning C4018: '<': signed/unsigned mismatch
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\particlemanager.cpp(59): warning C4244: 'argument': conversion from '_Ty' to 'float', possible loss of data
+          with
+          [
+              _Ty=int
+          ]
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\particlemanager.cpp(66): warning C4018: '<': signed/unsigned mismatch
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\particlemanager.cpp(81): warning C4018: '<': signed/unsigned mismatch
+  SceneManager.cpp
+  game.cpp
+s:\aut work\year 3\semester 2\game programming\game-programming-work\comp710-2019-s2\students\nikkolas.diehl\gp2dframework2019-spaceinvaders\framework\game.cpp(79): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  inputhandler.cpp
+  main.cpp
+  Generating Code...
   Framework.vcxproj -> S:\Aut Work\Year 3\Semester 2\Game Programming\Game-Programming-Work\COMP710-2019-S2\students\nikkolas.diehl\GP2DFramework2019-SpaceInvaders\Debug\Framework.exe

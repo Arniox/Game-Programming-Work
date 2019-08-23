@@ -1,0 +1,27 @@
+#pragma once
+#include "backbuffer.h"
+#include "ExplosionParticle.h"
+#include <vector>
+
+class ParticleManager
+{
+public:
+	ParticleManager();
+	~ParticleManager();
+
+	void ParticleManager::Initialise(BackBuffer* backBuffer);
+	void ParticleManager::Process(float deltaTime, bool& explode, std::vector<std::vector<int>*>& explosionCoords, int windowWidth, int windowHeight);
+	void ParticleManager::Draw(BackBuffer& backBuffer);
+
+	BackBuffer* m_backBuffer;
+
+	//Explosions
+	const int MAX_PARTICLES = 100000;
+	ExplosionParticle m_explosions[100000];
+	ExplosionParticle m_OutPut[1000];
+	std::vector<ExplosionParticle*> explosions;
+
+	//Get newest dead
+	ExplosionParticle* ParticleManager::GetNewestDead();
+};
+

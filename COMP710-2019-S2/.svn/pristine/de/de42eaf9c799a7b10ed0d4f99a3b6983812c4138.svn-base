@@ -1,0 +1,36 @@
+#pragma once
+#include "backbuffer.h"
+#include <vector>
+#include "entity.h"
+#include <math.h>
+
+//Definitions
+#define degreesToRadians(angleDegrees) (angleDegrees * M_PI / 180.0)
+#define radiansToDegrees(angleRadians) (angleRadians * 180.0 / M_PI)
+
+class ExplosionParticle :
+	public Entity
+{
+public:
+	ExplosionParticle();
+	~ExplosionParticle();
+
+	void ExplosionParticle::SetCenter(float x, float y);
+	void ExplosionParticle::Process(float deltaTime, int windowWidth, int windowHeight);
+
+	//Main Variables
+	bool dead;
+	float age;
+	float max_age;
+
+	//Movement
+	float explosionRadius;
+	float randomAngle;
+	float R;
+	float dy;
+	float dx;
+	float vx;
+	float vy;
+	float gravity;
+};
+
