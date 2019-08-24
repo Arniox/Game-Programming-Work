@@ -4,6 +4,7 @@
 
 InGameScene::InGameScene()
 :score(0)
+,particleCount(0)
 {
 
 }
@@ -116,6 +117,8 @@ InGameScene::Process(float deltaTime)
 	m_pPlayerShip->Process(deltaTime, m_windowWidth, m_windowHeight, moveRight, moveLeft);
 	//Process sound
 	m_fmodSystem->update();
+
+	particleCount = m_paritcleManager->GetParticleCount();
 }
 
 void 
@@ -146,9 +149,10 @@ InGameScene::Draw(BackBuffer& backBuffer, int& m_FPS, int& m_totalFramesPassed)
 
 	//Draw Text for fps
 	backBuffer.SetTextColour(255, 255, 255);
-	string fps = "Fps: " + to_string(m_FPS) + " | frameCount: ";
+	string fps = "Fps: " + to_string(m_FPS) + " | ";
+	fps += "Particle Count: " + to_string(particleCount) + " | frameCount: ";
 	fps += (m_totalFramesPassed > 1000000 ? " > 1M" : (m_totalFramesPassed > 100000 ? " > 100K" : (m_totalFramesPassed > 10000 ? " > 10k" : to_string(m_totalFramesPassed))));
-	backBuffer.DrawText((m_windowWidth / 1.28), 10, fps.c_str(), 1);
+	backBuffer.DrawText((m_windowWidth / 1.4), 10, fps.c_str(), 1);
 }
 
 void

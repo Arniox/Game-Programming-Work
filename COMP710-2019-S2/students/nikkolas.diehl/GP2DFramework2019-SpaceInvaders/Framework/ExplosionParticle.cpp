@@ -16,6 +16,7 @@ ExplosionParticle::ExplosionParticle()
 ,vx(0)
 ,vy(0)
 ,gravity(0.0f)
+,movementMultiplier(0)
 {
 	gravity = 3;
 }
@@ -30,6 +31,8 @@ ExplosionParticle::SetCenter(float x, float y, bool randomRadius, int max_angle,
 	explosionRadius = (randomRadius ? randMtoN(0, max_explosion_radius) : max_explosion_radius);
 	max_age = randMtoN(min_age, maximum_age);
 	randomExplosionDegredation = randMtoN(0, max_explosion_degredation);
+
+	movementMultiplier = 1;
 
 	R = degreesToRadians(randomAngle);
 	dy = explosionRadius * cosf(R);
@@ -62,9 +65,13 @@ ExplosionParticle::Process(float deltaTime, int windowWidth, int windowHeight, f
 	}
 	//If bounce from wall (reduce speed by value%)
 	if (m_y >= windowHeight - 5 || m_y <= 5) {
-		m_y = windowHeight-5;
-		vx *= -randomExplosionDegredation;
+		m_y = windowHeight-6;
+		vx *= randomExplosionDegredation;
 		vy *= -randomExplosionDegredation;
+		movementMultiplier = 0;
+	}
+	else {
+		movementMultiplier = 1;
 	}
 
 	//Move
@@ -72,7 +79,7 @@ ExplosionParticle::Process(float deltaTime, int windowWidth, int windowHeight, f
 	vx += dx * deltaTime * 2;
 	vy += dy * deltaTime * 2;
 	m_x += vx * deltaTime * 2;
-	m_y += vy * deltaTime * 2;
+	m_y += vy * (deltaTime * movementMultiplier) * 2;
 
 }
 

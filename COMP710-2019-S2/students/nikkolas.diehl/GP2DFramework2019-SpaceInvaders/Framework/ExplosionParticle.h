@@ -34,5 +34,8 @@ public:
 	float vx;
 	float vy;
 	float gravity;
+
+	//Movement multiplier
+	int movementMultiplier;
 };
 

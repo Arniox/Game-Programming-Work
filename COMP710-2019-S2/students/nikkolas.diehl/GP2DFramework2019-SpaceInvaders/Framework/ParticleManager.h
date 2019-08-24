@@ -13,6 +13,7 @@ public:
 	void ParticleManager::Initialise(BackBuffer* backBuffer, IniParser* m_iniParser);
 	void ParticleManager::Process(float deltaTime, bool& explode, std::vector<std::vector<int>*>& explosionCoords, int windowWidth, int windowHeight);
 	void ParticleManager::Draw(BackBuffer& backBuffer);
+	int ParticleManager::GetParticleCount();
 
 	BackBuffer* m_backBuffer;
 

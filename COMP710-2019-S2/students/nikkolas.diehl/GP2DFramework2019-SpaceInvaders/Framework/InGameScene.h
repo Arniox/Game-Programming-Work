@@ -40,6 +40,7 @@ private:
 	bool moveLeft = false;
 	bool drawGame = true;
 	int score;
+	int particleCount;
 
 	//Fmod
 	FMOD::System* m_fmodSystem;

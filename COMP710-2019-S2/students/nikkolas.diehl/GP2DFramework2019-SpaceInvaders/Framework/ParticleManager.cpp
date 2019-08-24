@@ -85,3 +85,8 @@ ParticleManager::Draw(BackBuffer & backBuffer)
 		}
 	}
 }
+
+int
+ParticleManager::GetParticleCount() {
+	return explosions.size();
+}

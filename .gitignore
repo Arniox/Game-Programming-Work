@@ -1,3 +1,7 @@
+*.db
+*.svn-base
+*.log
+*.ipch
 *.obj
 *.exe
 *.lib
