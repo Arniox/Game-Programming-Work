@@ -28,3 +28,4 @@
 *.pyo __pycache__
 *.rej
 *~ #*# .#* .*.swp .DS_Store [Tt]humbs.db
+COMP710-2019-S2/.svn/wc.db
