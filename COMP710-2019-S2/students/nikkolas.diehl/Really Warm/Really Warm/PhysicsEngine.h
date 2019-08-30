@@ -24,7 +24,9 @@ protected:
 	//Intersection checking
 	bool CheckWallIntersection(Article& character, Walls& wall);
 	//Intersection threshold
-	int mo_f_threshold = 5000;
+	int mo_i_threshold = 8000;
+	int mo_i_collisionCount;
+	int mo_i_collisionFix;
 
 private:
 	//Seperate processes
@@ -33,8 +35,8 @@ private:
 
 	//Constants
 	//Friction Coefficents
-	const float mx_f_staticFrictionCoefficient = 0.90f;
-	const float mx_f_frictionInAir = 1.0f;
+	const float mx_f_staticFrictionCoefficient = 0.25f;
+	const float mx_f_frictionInAir = 0.0f;
 	float mx_f_currentFrictionCoe;
 	//Base Variables
 	const float mx_f_gravity = 9.81f;

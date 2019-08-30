@@ -3,10 +3,10 @@
 Walls::Walls()
 	:mx_arr_point1()
 	,mx_arr_point2()
-	,mx_f_wallAngleRad(0)
-	,mx_f_wallAngleDeg(0)
-	,mx_f_imageCenterX(0)
-	,mx_f_imageCenterY(0)
+	,mx_f_wallAngleRad(0.0f)
+	,mx_f_wallAngleDeg(0.0f)
+	,mx_i_imageCenterX(0)
+	,mx_i_imageCenterY(0)
 {
 }
 Walls::~Walls()
@@ -14,32 +14,35 @@ Walls::~Walls()
 }
 
 void 
-Walls::UpdateWall(float x1, float y1, float x2, float y2)
+Walls::UpdateWall(int wallLength, float wallAngle, int x1, int y1)
 {	
+	mp_i_SpriteHeight = m_pSprite->GetHeight();
+
 	//Set wall points
 	mx_arr_point1[0] = x1;
 	mx_arr_point1[1] = y1;
-	mx_arr_point2[0] = x2;
-	mx_arr_point2[1] = y2;
+	//Set wall length
+	mx_i_wallLength = wallLength;
 
 	//Get angle of wall for sprite rotation
-	mx_f_wallAngleRad = (float)(atan2(mx_arr_point2[1] - mx_arr_point1[1], mx_arr_point2[0] - mx_arr_point1[0]));
-	mx_f_wallAngleDeg = (float)(mx_f_wallAngleRad * 180 / M_PI);
+	mx_f_wallAngleDeg = wallAngle;
+	mx_f_wallAngleRad = static_cast<float>(mx_f_wallAngleDeg * M_PI/ 180.0f);
+
+	//Set last two points
+	mx_arr_point2[0] = static_cast<int>(mx_i_wallLength * cos(mx_f_wallAngleRad) + mx_arr_point1[0]);
+	mx_arr_point2[1] = static_cast<int>(mx_i_wallLength * sin(mx_f_wallAngleRad) + mx_arr_point1[1]);
 
 	//Get center point of wall
-	mx_f_imageCenterX = (float)((mx_arr_point1[0] + mx_arr_point2[0]) / 2);
-	mx_f_imageCenterY = (float)((mx_arr_point1[1] + mx_arr_point2[1]) / 2);
-
-	//Get wall length
-	mx_i_wallLength = (int)(abs(mx_arr_point2[0] - mx_arr_point1[0]));
+	mx_i_imageCenterX = mx_i_wallLength / 2;
+	mx_i_imageCenterY = mp_i_SpriteHeight / 2;
 
 	SetCenter(x1, y1);
 }
 
 void 
-Walls::CreateWall(BackBuffer* m_pBackBuffer, float x1, float y1, float x2, float y2) {
+Walls::CreateWall(BackBuffer* m_pBackBuffer, float wallAngle, int wallLength, int x1, int y1) {
 	Entity::Initialise(m_pBackBuffer->CreateSprite("assets/Sprites/WallSegment-Small.png"));
-	UpdateWall(x1, y1, x2, y2);
+	UpdateWall(wallLength, wallAngle, x1, y1);
 }
 
 
@@ -53,23 +56,23 @@ Walls::Draw(BackBuffer & backBuffer)
 	Entity::Draw(backBuffer);
 }
 
-float*
+int*
 Walls::GetPoint1()
 {
 	return mx_arr_point1;
 }
 
-float* 
+int*
 Walls::GetPoint2()
 {
 	return mx_arr_point2;
 }
 
 void
-Walls::SetCenter(float x, float y)
+Walls::SetCenter(int x, int y)
 {
-	m_x = x;
-	m_y = y;
+	m_x = static_cast<float>(x);
+	m_y = static_cast<float>(y);
 }
 
 float

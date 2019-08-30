@@ -6,7 +6,6 @@ Article::Article()
 }
 Article::~Article()
 {
-	delete this;
 }
 
 void 
@@ -19,4 +18,9 @@ Article::SetCenter(float x, float y)
 float
 Article::GetSize() {
 	return mo_f_Size;
+}
+
+Sprite*
+Article::GetSprite() {
+	return m_pSprite;
 }

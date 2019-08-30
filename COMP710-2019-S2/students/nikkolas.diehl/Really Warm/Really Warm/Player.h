@@ -4,6 +4,8 @@
 #include "inputhandler.h"
 #include "Article.h"
 #include "PhysicsEngine.h"
+#include "WallController.h"
+#include "Walls.h"
 
 //Libraries
 
@@ -15,7 +17,7 @@ public:
 	~Player();
 
 	void Initialise(BackBuffer* m_pBackBuffer);
-	void Process(InputHandler* inputHandler, Walls* walls, float deltaTime);
+	void Process(InputHandler* inputHandler, WallController* wallController, float deltaTime);
 
 private:
 	int mo_i_health;

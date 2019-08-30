@@ -3,7 +3,7 @@
 #include "iniParser.h"
 #include "fmod.hpp"
 #include "Player.h"
-#include "Walls.h"
+#include "WallController.h"
 #include "inputhandler.h"
 
 class InGameScene
@@ -23,7 +23,7 @@ private:
 	FMOD::Channel* m_fmodChannel;
 
 	//Ingame members
-	Walls* wallsTest;
+	WallController* m_wallController;
 	Player* mx_player;
 
 protected:

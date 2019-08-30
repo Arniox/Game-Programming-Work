@@ -79,7 +79,7 @@ bool
 Game::Initialise()
 {
 	//Seed the srand
-	srand((unsigned int)time(0));
+	srand(static_cast<unsigned int>(time(0)));
 
 	//--------------File Parser---------------------
 	iniParser = new IniParser();

@@ -36,6 +36,8 @@
     <ClCompile Include="sprite.cpp" />
     <ClCompile Include="texture.cpp" />
     <ClCompile Include="texturemanager.cpp" />
+    <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="WallController.cpp" />
     <ClCompile Include="Walls.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +58,8 @@
     <ClInclude Include="sprite.h" />
     <ClInclude Include="texture.h" />
     <ClInclude Include="texturemanager.h" />
+    <ClInclude Include="Vector2.h" />
+    <ClInclude Include="WallController.h" />
     <ClInclude Include="Walls.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -164,7 +168,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <AdditionalLibraryDirectories>$(SolutionDir)..\..\..\shared\API-SDL\SDL2_ttf-devel-2.0.15-VC\SDL2_ttf-2.0.15\lib\x86;$(SolutionDir)..\..\..\shared\API-SDL\SDL2-devel-2.0.10-VC\SDL2-2.0.10\lib\x86;$(SolutionDir)..\..\..\shared\API-SDL\SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\lib\x86;$(SolutionDir)..\..\..\shared\API-FMOD\fmodstudioapi11014win-installer\api\lowlevel\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_TTF.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>

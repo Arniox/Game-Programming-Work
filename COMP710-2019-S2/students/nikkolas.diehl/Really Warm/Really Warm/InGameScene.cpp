@@ -11,6 +11,8 @@ InGameScene::~InGameScene()
 {
 	//Empty sound
 	UnloadFMOD();
+
+	delete m_wallController;
 }
 
 void 
@@ -26,12 +28,11 @@ InGameScene::Initialise(IniParser* m_iniParser, BackBuffer* m_pBackBuffer, int& 
 	//--------------Ingame entities-----------------
 	mx_player = new Player();
 	mx_player->Initialise(m_pBackBuffer);
-	mx_player->SetCenter((float)((screenWidth/2)-10), (float)(0));
+	mx_player->SetCenter(static_cast<float>((screenWidth/2)-10), static_cast<float>(0));
 
 	//--------------Walls---------------------------
-	wallsTest = new Walls();
-	wallsTest->CreateWall(m_pBackBuffer, 20.0f, 400.0f,    //x1 y1
-										 1000.0f, 400.0f); //x2 y2
+	m_wallController = new WallController();
+	m_wallController->Initialise(m_pBackBuffer, screenWidth, screenHeight);
 }
 
 void
@@ -43,7 +44,7 @@ InGameScene::Process(InputHandler* ep_inputHander, float deltaTime)
 	//Process entities
 	//Player
 	bool test = ep_inputHander->GetKeyBoardLayout("d");
-	mx_player->Process(ep_inputHander, wallsTest, deltaTime);
+	mx_player->Process(ep_inputHander, m_wallController, deltaTime);
 
 }
 
@@ -55,7 +56,7 @@ InGameScene::Draw(BackBuffer& backBuffer, int& m_FPS, int& m_totalFramesPassed)
 	//Draw entities
 	//Player
 	mx_player->Draw(backBuffer);
-	wallsTest->Draw(backBuffer);
+	m_wallController->Draw(backBuffer);
 	
 }
 
