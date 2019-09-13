@@ -1,4 +1,0 @@
-﻿  MainEx2.cpp
-s:\aut work\year 3\semester 2\game programming\working folder\students\nikkolas.diehl\week 1 - exercises\monty hall game - ex2\mainex2.cpp(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-s:\aut work\year 3\semester 2\game programming\working folder\students\nikkolas.diehl\week 1 - exercises\monty hall game - ex2\mainex2.cpp(25): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Monty Hall Game - Ex2.vcxproj -> S:\Aut Work\Year 3\Semester 2\Game Programming\Working Folder\students\nikkolas.diehl\Week 1 - Exercises\x64\Debug\Monty Hall Game - Ex2.exe

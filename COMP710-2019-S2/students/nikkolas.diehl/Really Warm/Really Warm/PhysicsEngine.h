@@ -1,11 +1,13 @@
 #pragma once
 
-#include "Article.h"
 #include "entity.h"
 #include "Walls.h"
+#include "Vector2.h"
+#include "logmanager.h"
 
 //Libraries
 #include <cmath>
+#include <string>
 
 class PhysicsEngine
 {
@@ -13,46 +15,42 @@ public:
 	PhysicsEngine();
 	~PhysicsEngine();
 
-	//Collisions
-	bool CheckEntityCollisions(Article* character, Article* entity);
-	bool CheckWallCollisions(Article* character, Walls* wall);
-
 	//Process Article Movement
-	void ProcessArticle(float deltaTime, int currentMovementState, float & mo_f_InitialVelocityX, float& mo_f_InitialVelocityY, float & mo_f_MaxMovementSpeed, float & x, float & y);
+	void ProcessEntity(float deltaTime, 
+		Entity* character, std::vector<Walls*> walls, 
+		double screenWidth, double screenHeight);
 
 protected:
-	//Intersection checking
-	bool CheckWallIntersection(Article& character, Walls& wall);
-	//Intersection threshold
-	int mo_i_threshold = 8000;
-	int mo_i_collisionCount;
-	int mo_i_collisionFix;
+
+	//Timestep
+	void TimeStepProcess(float deltaTime,
+		Entity* character, std::vector<Walls*> walls, 
+		double screenWidth, double screenHeight,
+		int timeStep);
+
+	//Add force
+	void ApplyForce(Entity* character, Vector2* forceToAdd);
+	//Calculate Friction
+	void CalculateFriction(Entity* character, double deltaTime);
+	//Calculate Force and Torque
+	void ComputeForceAndTorque(Entity* character);
+
+	//Calculate and resolve collisions
+	void DetectCollision(Entity* character, std::vector<Walls*> walls, double deltaTime);
+	void UpdatePhysicsResponse(Entity* character, Walls* wall);
+
+	//Log current object
+	void LogCurrent(Entity* character);
 
 private:
-	//Seperate processes
-	void ProcessXAxisMotion(float deltaTime, int currentMovementState, float & mo_f_BurstX, float & mo_f_MaxMovementSpeed, float & x, float & y);
-	void ProcessYAxisMotion(float deltaTime, float& mo_f_BurstY, float & x, float & y);
-
-	//Constants
 	//Friction Coefficents
-	const float mx_f_staticFrictionCoefficient = 0.25f;
-	const float mx_f_frictionInAir = 0.0f;
-	float mx_f_currentFrictionCoe;
-	//Base Variables
-	const float mx_f_gravity = 9.81f;
+	const double SKIN_METAL = 8;
+	const double MAT_AIR = 0;
+	double currentFriction;
 
-	//Angle of surface that an entity collides with
-	const float mx_f_maxFallAngle = 45;
-	float mx_f_angleOfSurfaceEntityCollide;
-
-	//Entity Variables
-	float mx_f_accelerationX;
-	float mx_f_accelerationY;
-	float mx_f_finalVelocityX;
-	float mx_f_finalVelocityY;
-
-	//Collision
-	bool mx_b_InAir;
-	float mx_f_futureY;
+	//Base Forces
+	Vector2* gravity;
+	Vector2* linearAcceleration;
+	double angularAcceleration;
 };
 

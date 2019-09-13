@@ -1,4 +1,5 @@
 #pragma once
+
 #include "Walls.h"
 #include "backbuffer.h"
 #include <vector>
@@ -9,7 +10,7 @@ public:
 	WallController();
 	~WallController();
 
-	void Initialise(BackBuffer* m_pBackBuffer, int screenWidth, int screenHeight);
+	void Initialise(BackBuffer* m_pBackBuffer, double screenWidth, double screenHeight);
 	void Process(float deltaTime);
 	void Draw(BackBuffer& m_pBackBuffer);
 

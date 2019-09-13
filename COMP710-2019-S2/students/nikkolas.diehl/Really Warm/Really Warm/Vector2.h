@@ -2,36 +2,80 @@
 
 #define _USE_MATH_DEFINES
 #include <cmath>
+#include <string>
 
 class Vector2
 {
 public:
 	Vector2();
+	//Take in an x and a y
+	Vector2(double in_x, double in_y);
 	~Vector2();
 
-	static Vector2& CreateVector(float in_x, float in_y);
+	double x;
+	double y;
+	const float _inaccuracy = 0.00001f; //Floating points compared with 1e-5
 
-	float x;
-	float y;
+	//scaling enum
+	enum Scaling {
+		ADDITON,
+		SUBTRACTION,
+		MULTIPLICATION,
+		DIVISION,
+		EQUAL
+	};
 
 	//Vector2 operator overrides
-	bool operator==(Vector2& other) const;
-	bool operator!=(Vector2& other) const;
 	bool operator<(Vector2& other) const;
 	bool operator>(Vector2& other) const;
-	Vector2& operator-(Vector2& other);
-	Vector2& operator+(Vector2& other);
+	bool operator<=(Vector2& other) const;
+	bool operator>=(Vector2& other) const;
+	//Vector2 special operator overrides
+	std::unique_ptr<Vector2> operator-(Vector2& other);
+	std::unique_ptr<Vector2> operator+(Vector2& other);
+	std::unique_ptr<Vector2> operator*(Vector2& other);
+	std::unique_ptr<Vector2> operator/(Vector2& other);
+
+	//Vector2 math
+	double Dot(Vector2* second);
+	void Add(Vector2* other);
+	void Minus(Vector2* other);
+	void Times(Vector2* other);
+	void Divide(Vector2* other);
+	void Ceil();
+	void Floor();
+	double Heading();
+	void Clear();
+
+	//More Vector2 math
+	void MakeCeil(Vector2* other);
+	void MakeFloor(Vector2* other);
+
+	//Scaler
+	std::unique_ptr<Vector2> ScaleMult(double scale);
+	std::unique_ptr<Vector2> ScaleDiv(double scale);
+
+	//Vector2 returns
+	std::unique_ptr<Vector2> Normal();
+	std::unique_ptr<Vector2> Normalize();
 
 	//Vector2 functions
-	float Magnatude();
-	float Dot(Vector2& other);
-	float Cross2D(Vector2& other_p1, Vector2& other_p2);
-	float AngleRad(Vector2& other);
-	float AngleDeg(Vector2& other);
-	Vector2& Scale(float& scale);
-	Vector2& Normalized();
+	void Copy(Vector2* from);
+	double Magnatude();
+	double AngleRad(Vector2* other);
+	double AngleDeg(Vector2* other);
 
-protected:
-	static Vector2* mp_Instance;
+	//Position Checking
+	double Distance(Vector2* other);
+
+	//Extra Utilities
+	bool ValuesEqual(double one, double two);
+	bool Lerp(Vector2* towards, double speed);
+	bool LerpX(Vector2* towards, double speed);
+	bool LerpY(Vector2* towards, double speed);
+	double Max();
+	double Min();
+	void Negate();
+	std::string ToString();
 };
 

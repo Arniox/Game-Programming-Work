@@ -1,27 +1,27 @@
 #pragma once
+
 #include "backbuffer.h"
 #include "entity.h"
 #include "inputhandler.h"
-#include "Article.h"
-#include "PhysicsEngine.h"
 #include "WallController.h"
 #include "Walls.h"
+#include "inputhandler.h"
 
 //Libraries
+#include <string>
+#include <cassert>
 
 class Player :
-	public Article
+	public Entity
 {
 public:
 	Player();
 	~Player();
 
-	void Initialise(BackBuffer* m_pBackBuffer);
-	void Process(InputHandler* inputHandler, WallController* wallController, float deltaTime);
+	void CreatePlayer(BackBuffer* m_pBackBuffer, double x, double y);
+	void Process(InputHandler* inputHandler);
 
 private:
-	int mo_i_health;
-
-	PhysicsEngine* physicsEngine;
+	int mx_i_health;
 };
 

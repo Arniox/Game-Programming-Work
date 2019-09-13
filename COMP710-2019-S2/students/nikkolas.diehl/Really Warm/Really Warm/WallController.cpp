@@ -5,22 +5,27 @@ WallController::WallController()
 }
 WallController::~WallController()
 {
-	walls.empty();
+	for (int i = 0; i < static_cast<signed int>(walls.size()); ++i) {
+		walls.at(i) = 0;
+	}
+
+	walls.clear();
 }
 
 void
-WallController::Initialise(BackBuffer* m_pBackBuffer, int screenWidth, int screenHeight) {
+WallController::Initialise(BackBuffer* m_pBackBuffer, double screenWidth, double screenHeight) {
 	//LEVEL SCANNING FOR WALLS - STUB
-	for (int i = 0; i < 2; ++i) {
+	for (int i = 0; i < 5; ++i) {
 		walls.push_back(new Walls());
 	}
 
 	//Manually set up walls for now
-	//backbuffer, angle, length, x, y
-	walls.at(0)->CreateWall(m_pBackBuffer, 0, screenWidth - 20, 10, 0); //top
-	walls.at(1)->CreateWall(m_pBackBuffer, 0, screenWidth - 20, 10, screenHeight - 20); //bottom
-	//walls.at(2)->CreateWall(m_pBackBuffer, 90, screenHeight - 10, 10, 0); //Right
-	//walls.at(3)->CreateWall(m_pBackBuffer, 90, screenHeight - 10, screenWidth - 10, 20); //Left
+	//backbuffer, angle, length, height, x, y
+	walls.at(0)->CreateWall(m_pBackBuffer, 0.0, screenWidth - 1, 26.0, 0.0, screenHeight - 27.0); //bottom
+	walls.at(1)->CreateWall(m_pBackBuffer, 0.0, 26.0, screenHeight-1, 0.0, 0.0); //left
+	walls.at(2)->CreateWall(m_pBackBuffer, 0.0, 26.0, screenHeight - 1, screenWidth - 27.0, 0.0); //Right
+	walls.at(3)->CreateWall(m_pBackBuffer, 0.0, screenWidth - 1, 26.0, 0.0, 0.0); //Middle wall
+	walls.at(4)->CreateWall(m_pBackBuffer, 0.0, screenWidth/2, 26.0, 0.0, 600); //Middle wall
 }
 
 void

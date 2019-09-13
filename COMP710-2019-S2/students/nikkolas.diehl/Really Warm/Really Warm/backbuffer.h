@@ -1,6 +1,7 @@
 // COMP710 GP 2D Framework 2019
 #ifndef __BACKBUFFER_H__
 #define __BACKBUFFER_H__
+
 #include "SDL_ttf.h"
 #include "animatedsprite.h"
 

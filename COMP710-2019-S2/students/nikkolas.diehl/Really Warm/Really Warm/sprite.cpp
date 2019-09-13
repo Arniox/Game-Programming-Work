@@ -9,13 +9,12 @@
 
 Sprite::Sprite()
 : m_pTexture(0)
+, m_centerX(0)
 , m_x(0)
 , m_y(0)
 , m_width(0)
 , m_height(0)
 , m_angle(0.0f)
-, m_imageLength(0)
-, m_centerX(0)
 , m_centerY(0)
 {
 
@@ -23,7 +22,6 @@ Sprite::Sprite()
 
 Sprite::~Sprite()
 {
-
 }
 
 bool 
@@ -74,9 +72,9 @@ Sprite::GetY() const
 }
 
 void
-Sprite::SetAngle(float angle)
+Sprite::SetAngle(double angle)
 {
-	m_angle = angle;
+	m_angle = static_cast<float>(angle);
 }
 
 float
@@ -87,13 +85,7 @@ Sprite::GetAngle() const
 
 void
 Sprite::SetLength(int length) {
-	m_imageLength = length;
-}
-
-int
-Sprite::GetLength() const
-{
-	return (m_imageLength);
+	m_width = length;
 }
 
 void

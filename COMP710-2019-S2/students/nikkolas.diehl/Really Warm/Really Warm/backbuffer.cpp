@@ -154,21 +154,22 @@ BackBuffer::DrawSprite(Sprite& sprite)
 	//Create destination point
 	SDL_Rect dest;
 	SDL_Rect src;
+	//SDL_Point rotPoint = { 0,0 };
 
 	src.x = 0;
 	src.y = 0;
-	src.w = sprite.GetLength();
+	src.w = sprite.GetWidth();
 	src.h = sprite.GetHeight();
 
 	dest.x = sprite.GetX();
 	dest.y = sprite.GetY();
-	dest.w = (sprite.GetLength() != 0 ? sprite.GetLength() : sprite.GetWidth());
+	dest.w = sprite.GetWidth();
 	dest.h = sprite.GetHeight();
 
 	//Create flip
 	SDL_RendererFlip flip = SDL_FLIP_NONE;
 
-	SDL_RenderCopyEx(m_pRenderer, sprite.GetTexture()->GetTexture(), (sprite.GetLength() != 0 ? &src : NULL), &dest, sprite.GetAngle(), NULL, flip);
+	SDL_RenderCopyEx(m_pRenderer, sprite.GetTexture()->GetTexture(), (sprite.GetWidth() != 0 ? &src : NULL), &dest, sprite.GetAngle(), NULL, flip);
 }
 
 void BackBuffer::DrawAnimatedSprite(AnimatedSprite & animatedSprite)

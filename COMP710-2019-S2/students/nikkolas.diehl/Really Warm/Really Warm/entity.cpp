@@ -1,131 +1,126 @@
-// COMP710 GP 2D Framework 2019
-
-// This include:
 #include "entity.h"
 
-// Local includes:
-#include "sprite.h"
-#include "backbuffer.h"
-
-// Library includes:
-#include <cassert>
-
 Entity::Entity()
-: m_pSprite(0)
-, m_x(0.0f)
-, m_y(0.0f)
-, m_velocityX(0.0f)
-, m_velocityY(0.0f)
-, m_dead(false)
+: mo_sprite(0)
+, entityBox(0)
+, linearVelocity(0)
+, entityAngle(0.0)
+, anglularVelocity(0.0)
+, force(0)
+, mat()
 {
+	mat = new Material();
+}
+Entity::~Entity() {
+	delete mat;
+	mat = 0;
 
+	delete mo_sprite;
+	mo_sprite = 0;
 }
 
-Entity::~Entity()
-{
-	delete m_pSprite;
-	m_pSprite = 0;
-}
-
+//intialise entity with sprite
 bool
-Entity::Initialise(Sprite* sprite)
-{
+Entity::Initialise(Sprite* sprite) {
 	assert(sprite);
-	m_pSprite = sprite;
+	mo_sprite = sprite;
 
 	return (true);
 }
 
-void 
-Entity::Process(float deltaTime)
-{
-	// SS04.4: Generic position update, based upon velocity (and time).
-
-	// SS04.4: Boundary checking and position capping. 
-}
-
-void 
-Entity::Draw(BackBuffer& backBuffer)
-{
-	assert(m_pSprite);
-	m_pSprite->SetX(static_cast<int>(m_x));
-	m_pSprite->SetY(static_cast<int>(m_y));
-	m_pSprite->Draw(backBuffer);
-}
-
-bool
-Entity::IsCollidingWith(Entity& e)
-{
-	// SS04.6: Generic Entity Collision routine.
-
-	// SS04.6: Does this object collide with the e object?
-	// SS04.6: Create a circle for each entity (this and e).
-
-	// SS04.6: Check for intersection.
-	// SS04.6: Using circle-vs-circle collision detection.
-
-	// SS04.6: Return result of collision.
-
-	return (false); // SS04.6 Change return value!
-}
-
-void 
-Entity::SetDead(bool dead)
-{
-	m_dead = dead;
-}
-
+//Set the position of the entity at x, y
+//This moves the entire collision box
 void
-Entity::SetPosition(float x, float y)
-{
-	m_x = x;
-	m_y = y;
+Entity::SetCenter(double x, double y) {
+	entityBox->X(x);
+	entityBox->Y(y);
 }
 
+//Set the size of the entity with w, h
+//This changes the width and height of the collision box and thus the size of the entity
 void
-Entity::SetPositionX(float x)
-{
-	m_x = x;
+Entity::SetSize(double w, double h) {
+	entityBox->W(w);
+	entityBox->H(h);
+
+	entityBox->Center()->x = entityBox->W() / 2;
+	entityBox->Center()->y = entityBox->H() / 2;
 }
 
+//Return the collision box and thus the entity shape
+Rectangle* 
+Entity::GetCollisionBox() {
+	return entityBox;
+}
+
+//Return the current position from the collision box
+Vector2*
+Entity::GetPos() {
+	return entityBox->GetPos();
+}
+
+//Return the velocity vector
+Vector2*
+Entity::GetVelocity() {
+	return linearVelocity;
+}
+
+double 
+Entity::GetAngularVelocity() const
+{
+	return anglularVelocity;
+}
+
+//Return the current force vector
+Vector2*
+Entity::GetForce() {
+	return force;
+}
+
+double* 
+Entity::GetAngularVelocity()
+{
+	return &anglularVelocity;
+}
+
+double*
+Entity::GetAngle()
+{
+	return &entityAngle;
+}
+
+//Calculate the moment of intertia
 void
-Entity::SetPositionY(float y)
+Entity::CalculateBoxIntertia() 
 {
-	m_y = y;
+	double w = entityBox->W();
+	double h = entityBox->H();
+	mat->momentOfIntertia = mat->mass * (w * w + h * h) / 12.0;
 }
 
-float 
-Entity::GetPositionX() const
-{
-	return (m_x);
+//Return the sprite object of the entity
+Sprite* 
+Entity::GetSprite() {
+	return mo_sprite;
 }
 
-float 
-Entity::GetPositionY() const
-{
-	return (m_y);
+//Return the material of the entity
+Material*
+Entity::GetMat() {
+	return mat;
 }
 
-float 
-Entity::GetHorizontalVelocity() const
-{
-	return (m_velocityX);
-}
-
-float 
-Entity::GetVerticalVelocity() const
-{
-	return (m_velocityY);
-}
-
+//Process the given entity
 void 
-Entity::SetHorizontalVelocity(float x)
-{
-	m_velocityX = x;
+Entity::Process(float deltaTime) {
+
 }
 
+//Draw the given entity
 void 
-Entity::SetVerticalVelocity(float y)
-{
-	m_velocityY = y;
+Entity::Draw(BackBuffer& backBuffer) {
+	assert(mo_sprite);
+	mo_sprite->SetX(static_cast<int>(entityBox->X()));
+	mo_sprite->SetY(static_cast<int>(entityBox->Y()));
+	mo_sprite->Draw(backBuffer);
 }

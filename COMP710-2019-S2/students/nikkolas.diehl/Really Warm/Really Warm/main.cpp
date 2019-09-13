@@ -1,10 +1,13 @@
 // COMP710 GP 2D Framework 2019
 #define _CRTDBG_MAP_ALLOC
+#include <cstdlib>
 #include <crtdbg.h>
-#ifdef _DEBUG
-	#define DEBUG_NEW new(_NORMAL_BLOCK, __FILE__, __LINE__)
-	#define new DEBUG_NEW
-#endif
+
+
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
+
 // Library includes:
 #include <SDL.h>
 
@@ -32,8 +35,6 @@ int main(int argc, char* argv[])
 
 	Game::DestroyInstance();
 	LogManager::GetInstance().DestroyInstance();
-	
-	//_CrtDumpMemoryLeaks();
 
 	return (0);
 }

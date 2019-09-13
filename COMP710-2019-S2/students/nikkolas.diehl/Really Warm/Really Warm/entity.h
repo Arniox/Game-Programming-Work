@@ -1,6 +1,19 @@
-// COMP710 GP 2D Framework 2019
 #ifndef __ENTITY_H__
 #define __ENTITY_H__
+
+//Locals
+#include "sprite.h"
+#include "backbuffer.h"
+#include "Rectangle.h"
+#include "Vector2.h"
+#include "Material.h"
+
+//Libraries
+#include <cassert>
+#include <cmath>
+
+#define degreesToRadians(angleDegrees) (angleDegrees * M_PI / 180.0)
+#define radiansToDegrees(angleRadians) (angleRadians * 180.0 / M_PI)
 
 // Forward Declarations:
 class BackBuffer;
@@ -8,8 +21,8 @@ class Sprite;
 
 class Entity
 {
-	//Member Methods:
 public:
+	//Main methods
 	Entity();
 	~Entity();
 
@@ -18,46 +31,45 @@ public:
 	void Process(float deltaTime);
 	void Draw(BackBuffer& backBuffer);
 
-	void SetDead(bool dead);
-	bool IsDead() const;
+public:
 
-	bool IsCollidingWith(Entity& e);
+public:
+	//Secondary methods
 
-	void SetPosition(float x, float y);
-	void SetPositionX(float x);
-	void SetPositionY(float y);
+	//Position entity
+	void SetCenter(double x, double y);
+	//Set width and height
+	void SetSize(double width, double height);
+	//Get sprite
+	Sprite* GetSprite();
+	Material* GetMat();
 
-	float GetPositionX() const;
-	float GetPositionY() const;
-
-	float GetHorizontalVelocity() const;
-	void SetHorizontalVelocity(float x); 
-
-	float GetVerticalVelocity() const;
-	void SetVerticalVelocity(float y);
-
-protected:
+	//Get data
+	Rectangle* GetCollisionBox();
+	Vector2* GetPos();
+	Vector2* GetVelocity();
+	double GetAngularVelocity() const;
+	Vector2* GetForce();
+	double* GetAngularVelocity();
+	double* GetAngle();
+	//Calcluate
+	void CalculateBoxIntertia();
 
 private:
 	Entity(const Entity& entity);
 	Entity& operator=(const Entity& entity);
 
-	//Member Data:
-public:
-
 protected:
-	Sprite* m_pSprite;
+	//Main Vectors
+	Rectangle* entityBox;		//Collision box with position vector
+	Vector2* linearVelocity;	//Velocity Vector
+	double anglularVelocity;	//Angular Velocity
+	double entityAngle;
+	Vector2* force;				//Force Vector
 
-	float m_x;
-	float m_y;
-
-	float m_velocityX;
-	float m_velocityY;
-
-	bool m_dead;
-
-private:
-
+	Material* mat;				//Material of entity
+protected:
+	Sprite* mo_sprite;
 };
 
 #endif //__ENTITY_H__

@@ -3,6 +3,7 @@
 #define __GAME_H__
 
 #include <vector>
+#include "Main.h"
 #include "SceneManager.h"
 #include "fmod.hpp"
 #include "iniParser.h"

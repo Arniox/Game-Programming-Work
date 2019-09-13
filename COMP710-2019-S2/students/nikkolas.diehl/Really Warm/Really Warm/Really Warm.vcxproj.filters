@@ -55,6 +55,12 @@
     <Filter Include="Header Files\PhysicsEngine">
       <UniqueIdentifier>{91e5fe7a-199a-41d1-acdd-0d283582f0e7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\QuadTree">
+      <UniqueIdentifier>{395ad56f-62be-4a35-a268-b902aeff897b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\QuadTree">
+      <UniqueIdentifier>{bb8e1616-2333-4d6f-a135-f4c1c83ecf03}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="animatedsprite.cpp">
@@ -108,14 +114,20 @@
     <ClCompile Include="Walls.cpp">
       <Filter>Source Files\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="Article.cpp">
-      <Filter>Source Files\EntityControllers</Filter>
-    </ClCompile>
     <ClCompile Include="WallController.cpp">
       <Filter>Source Files\EntityControllers</Filter>
     </ClCompile>
     <ClCompile Include="Vector2.cpp">
       <Filter>Source Files\FrameWork</Filter>
+    </ClCompile>
+    <ClCompile Include="QuadTree.cpp">
+      <Filter>Source Files\QuadTree</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle.cpp">
+      <Filter>Source Files\FrameWork</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>Source Files\EntityControllers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -170,14 +182,20 @@
     <ClInclude Include="Walls.h">
       <Filter>Header Files\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="Article.h">
-      <Filter>Header Files\EntityControllers</Filter>
-    </ClInclude>
     <ClInclude Include="WallController.h">
       <Filter>Header Files\EntityControllers</Filter>
     </ClInclude>
     <ClInclude Include="Vector2.h">
       <Filter>Header Files\FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadTree.h">
+      <Filter>Header Files\QuadTree</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Header Files\FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>Header Files\EntityControllers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

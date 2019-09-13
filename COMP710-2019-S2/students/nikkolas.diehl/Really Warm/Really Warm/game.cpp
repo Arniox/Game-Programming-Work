@@ -1,5 +1,3 @@
-// COMP710 GP 2D Framework 2019
-
 // This includes:
 #include "game.h"
 
@@ -168,7 +166,7 @@ Game::Process(float deltaTime)
 	}
 
 	//Process Scene manager
-	m_pSceneManager->Process(m_pInputHandler, deltaTime);
+	m_pSceneManager->Process(m_pInputHandler, deltaTime, screenWidth, screenWidth);
 }
 
 void 

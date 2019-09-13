@@ -1,7 +1,4 @@
 #include "InGameScene.h"
-#include "inputhandler.h"
-#include <time.h>
-
 
 InGameScene::InGameScene()
 :mx_player(0)
@@ -13,10 +10,20 @@ InGameScene::~InGameScene()
 	UnloadFMOD();
 
 	delete m_wallController;
+	m_wallController = 0;
+
+	delete mx_player;
+	mx_player = 0;
+
+	delete physicsEngine;
+	physicsEngine = 0;
+
+	//delete qt;
+	//qt = 0;
 }
 
 void 
-InGameScene::Initialise(IniParser* m_iniParser, BackBuffer* m_pBackBuffer, int& screenWidth, int& screenHeight)
+InGameScene::Initialise(IniParser* m_iniParser, BackBuffer* m_pBackBuffer, int screenWidth, int screenHeight)
 {
 	//Init Fmod
 	InitFMOD();
@@ -25,18 +32,22 @@ InGameScene::Initialise(IniParser* m_iniParser, BackBuffer* m_pBackBuffer, int& 
 	m_windowWidth = screenWidth;
 	m_windowHeight = screenHeight;
 
+	physicsEngine = new PhysicsEngine();
+
 	//--------------Ingame entities-----------------
 	mx_player = new Player();
-	mx_player->Initialise(m_pBackBuffer);
-	mx_player->SetCenter(static_cast<float>((screenWidth/2)-10), static_cast<float>(0));
+	mx_player->CreatePlayer(m_pBackBuffer, (static_cast<double>(screenWidth) / 2.0) - 10.0, 100.0);
 
 	//--------------Walls---------------------------
 	m_wallController = new WallController();
-	m_wallController->Initialise(m_pBackBuffer, screenWidth, screenHeight);
+	m_wallController->Initialise(m_pBackBuffer, static_cast<double>(screenWidth), static_cast<double>(screenHeight));
+
+	//--------------Quad Tree-----------------------
+	//qt = new QuadTree(screenWidth, screenHeight, 16, 16);
 }
 
 void
-InGameScene::Process(InputHandler* ep_inputHander, float deltaTime)
+InGameScene::Process(InputHandler* ep_inputHander, float deltaTime, int screenWidth, int screenHeight)
 {
 	//Process sound
 	m_fmodSystem->update();
@@ -44,7 +55,14 @@ InGameScene::Process(InputHandler* ep_inputHander, float deltaTime)
 	//Process entities
 	//Player
 	bool test = ep_inputHander->GetKeyBoardLayout("d");
-	mx_player->Process(ep_inputHander, m_wallController, deltaTime);
+	mx_player->Process(ep_inputHander);
+
+	//Physics
+	//-------------------Process the player--------------------
+	physicsEngine->ProcessEntity(deltaTime, mx_player, m_wallController->GetWalls(), screenWidth, screenHeight);
+
+	//Insert all objects into quadtree
+	//InsertAll();
 
 }
 

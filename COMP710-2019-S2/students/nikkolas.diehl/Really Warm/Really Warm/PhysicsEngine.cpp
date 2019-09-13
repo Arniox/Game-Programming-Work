@@ -1,177 +1,193 @@
 #include "PhysicsEngine.h"
-#include "logmanager.h"
-#include <string>
+
+#define min(a, b) (((a) < (b)) ? (a) : (b))
+#define max(a, b) (((a) > (b)) ? (a) : (b))
+#define degreesToRadians(angleDegrees) (angleDegrees * M_PI / 180.0)
+#define radiansToDegrees(angleRadians) (angleRadians * 180.0 / M_PI)
+
+using namespace std;
 
 PhysicsEngine::PhysicsEngine()
-	:mx_f_currentFrictionCoe(mx_f_staticFrictionCoefficient)
-	,mx_f_angleOfSurfaceEntityCollide(0.0f)
-	,mx_f_finalVelocityX(0.0f)
-	,mx_f_finalVelocityY(0.0f)
-	,mx_f_accelerationX(0.0f)
-	,mx_f_accelerationY(0.0f)
-	,mx_f_futureY(0.0f)
-	,mo_i_collisionCount(0)
-	,mo_i_collisionFix(0)
-	,mx_b_InAir(true)
+: angularAcceleration(0.0)
+, currentFriction(SKIN_METAL)
 {
+	gravity = new Vector2(0.0, 9.81);
+	linearAcceleration = new Vector2();
 }
 PhysicsEngine::~PhysicsEngine()
 {
+	delete gravity;
 }
 
 void 
-PhysicsEngine::ProcessArticle(float deltaTime, int currentMovementState, float & mo_f_BurstX, float& mo_f_BurstY, float & mo_f_MaxMovementSpeed, float & x, float & y)
+PhysicsEngine::ProcessEntity(float deltaTime,
+	Entity* character, vector<Walls*> walls, 
+	double screenWidth, double screenHeight)
 {
-	//Proccess movement
-	ProcessXAxisMotion(deltaTime, currentMovementState, mo_f_BurstX, mo_f_MaxMovementSpeed, x, y);
-	ProcessYAxisMotion(deltaTime, mo_f_BurstY, x, y);
+	//double test = (*character->GetForce()).x;
+	TimeStepProcess(deltaTime, character, walls, screenWidth, screenHeight, 100);
 }
 
 void
-PhysicsEngine::ProcessXAxisMotion(float deltaTime, int currentMovementState, float & mo_f_BurstX, float & mo_f_MaxMovementSpeed, float & x, float & y) {
-	
-	//X AXIS PROCESSING
+PhysicsEngine::TimeStepProcess(float deltaTime, 
+	Entity* character, std::vector<Walls*> walls, 
+	double screenWidth, double screenHeight,
+	int timeStep) 
+{
+	double processedDeltaTime = deltaTime / timeStep;
 
-	//Acceleration = Max Movement Speed / deltaTime
-	//Acceleration *= (-1 | 0 | 1)
-	mx_f_accelerationX = mo_f_MaxMovementSpeed / deltaTime;
-	if (!mx_b_InAir) {
-		mx_f_accelerationX *= currentMovementState;
+	//Process entire physics engine multiple times per step with
+	//a smaller deltaTime for more accuracy
+	for (int i = 0; i < timeStep; ++i) {
+		//Add forces back per frame
+		ComputeForceAndTorque(character);
+		ApplyForce(character, gravity);
+		ApplyForce(character, character->GetForce());
+
+		//Set angular acceleration
+		angularAcceleration = character->GetMat()->torque / character->GetMat()->momentOfIntertia;
+
+		//Add Velocity per frame for linear and angular
+		character->GetVelocity()->Add(&(*linearAcceleration->ScaleMult(processedDeltaTime)));
+		*character->GetAngularVelocity() += angularAcceleration * processedDeltaTime;
+
+		//Calculate and resolve collisions
+		DetectCollision(character, walls, processedDeltaTime);
+		
+		//Add displacement per frame for linear and angular
+		character->GetPos()->Add(&(*character->GetVelocity()->ScaleMult(processedDeltaTime)));
+		//*character->GetAngle() += *character->GetAngularVelocity() * processedDeltaTime;
+
+		//Add friction
+		CalculateFriction(character, processedDeltaTime);
+
+		//Clear forces per frame
+		linearAcceleration->Clear();
 	}
-	else {
-		mx_f_accelerationX *= 0;
-	}
 
-	//Velocity = Initial Velocity + Acceleration * time
-	//Velocity += Acceleration * deltaTime-
-	mx_f_finalVelocityX += mx_f_accelerationX - mx_f_currentFrictionCoe * mx_f_finalVelocityX;
-
-	//Displacement = Initial Displacement + Velocity * time
-	//Displacement += Velocity * deltaTime
-	x += mx_f_finalVelocityX * deltaTime;
+	//Log
+	//LogCurrent(character);
 }
 
 void
-PhysicsEngine::ProcessYAxisMotion(float deltaTime, float& mo_f_BurstY, float & x, float & y) {
-	
-	//Y AXIS PROCESSING
+PhysicsEngine::ApplyForce(Entity* character, Vector2* forceToAdd)
+{
+	//Add acceleration to accleration
+	//Vector2* scaledForce = &(*(forceToAdd->ScaleMult(character->GetMat()->mass)));
+	linearAcceleration->Add(&(*forceToAdd->ScaleMult(character->GetMat()->mass)));
+}
 
-	//Acceleration = Gravity / deltaTime
-	mx_f_accelerationY = mx_f_gravity / deltaTime;
-	
-	//Velocity = Initial Velocity + Acceleration * time
-	//Velocity += Acceleration * deltaTime
-	mx_f_finalVelocityY += mx_f_accelerationY * deltaTime;
+void
+PhysicsEngine::CalculateFriction(Entity* character, double deltaTime)
+{
+	//Calculate friction coe
+	double frictionCoe = 1 / (1 + deltaTime * currentFriction);
 
-	//Reverse Force (set velocity to 0)
-	if (!mx_b_InAir) {
-		//Reverse motion as the ground pushes you upwards at the same rate gravity pushes you down
-		mx_f_finalVelocityY = 0;
-		if (mo_i_collisionCount == 1) {
-			y += mo_i_collisionFix;
+	//Add friction to both angular and movement velocities
+	character->GetVelocity()->x *= frictionCoe;
+	*character->GetAngularVelocity() *= frictionCoe;
+}
+
+void
+PhysicsEngine::ComputeForceAndTorque(Entity* character) {
+	//Calculate torque
+	character->GetMat()->torque = -((character->GetCollisionBox()->W() / 2) *
+		(character->GetForce()->y * 100) -
+		(character->GetCollisionBox()->H() / 2) *
+		(character->GetForce()->x * 100));
+}
+
+void 
+PhysicsEngine::DetectCollision(Entity* character, std::vector<Walls*> walls, double deltaTime)
+{
+	//Iterate through all walls
+	vector<Walls*>::iterator wallIter;
+	for (wallIter = walls.begin(); wallIter != walls.end(); ++wallIter) {
+		//Refresh entity inAir state
+		character->GetMat()->inAir = true;
+		//Broad
+		if (character->GetCollisionBox()->CheckCollision((*wallIter)->GetCollisionBox())) {
+			//Update physics
+			UpdatePhysicsResponse(character, (*wallIter));
 		}
-
-		//Jump force
-		if (mo_f_BurstY != 0) {
-			mx_f_finalVelocityY = -mo_f_BurstY;
-		}
-	}
-
-	//Displacement = Initial Displacement + Velocity * time
-	//Displacement += Velocity * deltaTime
-	y += mx_f_finalVelocityY * deltaTime;
-
-	mx_f_futureY = y + 0;
-	mx_f_futureY += mx_f_finalVelocityY * deltaTime;
-
-	
-}
-
-bool 
-PhysicsEngine::CheckEntityCollisions(Article* character, Article* entity)
-{
-	//Character is 1, entity is 2
-	//Object distance from eachother
-	float objectDistance = static_cast<float>(sqrt(pow(entity->GetPositionX() - character->GetPositionX(), 2) + pow(entity->GetPositionY() - character->GetPositionY(), 2)) - character->GetSize() - entity->GetSize());
-	//If collide, then return true
-	if (objectDistance <= 0) {
-		return true;
-	}
-
-	return false;
-}
-
-bool 
-PhysicsEngine::CheckWallCollisions(Article* character, Walls* wall)
-{
-	//Check the wall collision first
-	if (CheckWallIntersection((*character), (*wall))) {
-		mo_i_collisionCount += 1;
-		//Get angle of collision
-		mx_f_angleOfSurfaceEntityCollide = wall->GetWallAngle();
-		//Set character angle to that of wall
-		character->GetSprite()->SetAngle(mx_f_angleOfSurfaceEntityCollide);
-		//Set current friction coefficient to surface contact with brick
-		mx_f_currentFrictionCoe = mx_f_staticFrictionCoefficient;
-		//Article is colliding with ground
-		mx_b_InAir = false;
-		return true;
-	}
-	else {
-		mo_i_collisionCount = 0;
-		//Set angle of collision to 0 as ground is flat when not colliding
-		mx_f_angleOfSurfaceEntityCollide = 90;
-		//Set current friction coefficient to in air
-		mx_f_currentFrictionCoe = mx_f_frictionInAir;
-		//Article is in air
-		mx_b_InAir = true;
-		return false;
 	}
 }
 
-bool 
-PhysicsEngine::CheckWallIntersection(Article & character, Walls & wall)
-{
-	//Get cross product of line-point intersection
-	int dxc = static_cast<int>((character.GetPositionX() + character.mp_i_SpriteWidth/2) - wall.GetPoint1()[0]);
-	int dyc = static_cast<int>((mx_f_futureY + character.mp_i_SpriteHeight) - wall.GetPoint1()[1]);
-
-	int dxl = static_cast<int>(wall.GetDxl());
-	int dyl = static_cast<int>(wall.GetDyl());
-
-	int cross = dxc * dyl - dyc * dxl;
-
-	mo_i_collisionFix = static_cast<int>(abs((wall.GetPoint1()[1] - wall.mp_i_SpriteHeight-5) - character.GetPositionY()));
-
-	std::string strx = "Player X: " + std::to_string(character.GetPositionX());
-	strx += "   Player Y: " + std::to_string(character.GetPositionY());
-	strx += "   Future Y: " + std::to_string(mx_f_futureY);
-	strx += "   dxc: " + std::to_string(dxc) + "   dyc: " + std::to_string(dyc);
-	strx += "   dxl: " + std::to_string(dxl) + "   dyl: " + std::to_string(dyl);
-	strx += "   Cross Product: " + std::to_string(cross);
-	strx += "   Jump force: " + std::to_string(character.mp_f_BurstY);
-	strx += "   Collision Fix: " + std::to_string(mo_i_collisionFix);
-
-	LogManager::GetInstance().Log(strx.c_str());
-
-	//If and only if cross product is exactly equal to 0 then the point intersects with the line.
-	//However this is problematic with ghosting and faster moving objects so as long as the absolute of the cross is
-	//less than 10000 does a collision happen
-	if (!(abs(cross) <= mo_i_threshold)) {
-		return false;
+void
+PhysicsEngine::UpdatePhysicsResponse(Entity* character, Walls* wall) {
+	if (character->GetMat()->isKinematic) {
+		return;
 	}
-	else {
-		if (abs(dxl) >= abs(dyl)) {
-			return dxl > 0 ?
-				wall.GetPoint1()[0] <= character.GetPositionX() && character.GetPositionX() <= wall.GetPoint2()[0] :
-				wall.GetPoint2()[0] <= character.GetPositionX() && character.GetPositionX() <= wall.GetPoint1()[0];
+
+	//-----------------Update physics------------------
+	//Simplistic physics simulation. Simply negates velocity from itself and moves back by one pixel
+	/*
+	{
+		unique_ptr<Vector2> normal = std::make_unique<Vector2>();
+		normal->Copy(character->GetCollisionBox()->GetNormal());
+		if (normal->x < 0 || normal->y < 0) {
+			character->GetVelocity()->Add(&(*(*character->GetVelocity() * *normal)));
 		}
 		else {
-			return dyl > 0 ?
-				wall.GetPoint1()[1] <= mx_f_futureY && mx_f_futureY <= wall.GetPoint2()[1] :
-				wall.GetPoint2()[1] <= mx_f_futureY && mx_f_futureY <= wall.GetPoint1()[1];
+			character->GetVelocity()->Minus(&(*(*character->GetVelocity() * *normal)));
+		}
+		character->GetPos()->Minus(&(*normal->ScaleDiv(2)));
+	}
+	*/
+
+	//Physically calculated impulse direction change:
+	
+	//Calculate out contact velocity from relative velocity and normal of character
+	
+	{
+		unique_ptr<Vector2> rv = move(*wall->GetVelocity() - *character->GetVelocity());
+		unique_ptr<Vector2> normal = std::make_unique<Vector2>();
+
+		normal->Copy(character->GetCollisionBox()->GetNormal());
+		double contactVel = (*rv).Dot(&(*normal));
+
+		//Character is in air when normal.y is not equal to 0
+		if (normal->y != 0) {
+			character->GetMat()->inAir = false;
+		}
+
+		//Do not resolve if velocities are seperating
+		if (contactVel > 0) {
+			return;
+		}
+
+		//Calculate resitution
+		double e = min(character->GetMat()->restitution, wall->GetMat()->restitution);
+		//Calculate impulse scalar
+		double j = -(1.0 + e) * contactVel;
+		j /= (character->GetMat()->mass == INFINITY ? 0 : character->GetMat()->mass) +
+			(wall->GetMat()->mass == INFINITY ? 0 : wall->GetMat()->mass);
+
+		//Apply impulse
+		unique_ptr<Vector2> impulse = move((*normal).ScaleMult(j));
+		//Change velocity
+		if (character->GetMat()->mass != INFINITY) {
+			character->GetVelocity()->Minus(&(*(*impulse).ScaleMult(character->GetMat()->mass)));
+		}
+		if (wall->GetMat()->mass != INFINITY) {
+			wall->GetVelocity()->Add(&(*(*impulse).ScaleMult(wall->GetMat()->mass)));
 		}
 	}
+	
+}
+
+void
+PhysicsEngine::LogCurrent(Entity* character) 
+{
+	//Log all
+	string output = "Character == Pos: " + character->GetPos()->ToString();
+	output += " Linear Velocity: " + character->GetVelocity()->ToString();
+	output += " Angular Velocity: " + to_string(*character->GetAngularVelocity());
+	output += " Angle: " + to_string(*character->GetAngle());
+	output += " Torque: " + to_string(character->GetMat()->torque);
+	output += " Linear Acceleration: " + linearAcceleration->ToString();
+
+	LogManager::GetInstance().Log(output.c_str());
 }
 
 

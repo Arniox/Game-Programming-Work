@@ -21,7 +21,6 @@
   <ItemGroup>
     <ClCompile Include="animatedsprite.cpp" />
     <ClCompile Include="backbuffer.cpp" />
-    <ClCompile Include="Article.cpp" />
     <ClCompile Include="entity.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="InGameScene.cpp" />
@@ -29,9 +28,12 @@
     <ClCompile Include="inputhandler.cpp" />
     <ClCompile Include="logmanager.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Material.cpp" />
     <ClCompile Include="MenuScene.cpp" />
     <ClCompile Include="PhysicsEngine.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="QuadTree.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="sprite.cpp" />
     <ClCompile Include="texture.cpp" />
@@ -43,16 +45,18 @@
   <ItemGroup>
     <ClInclude Include="animatedsprite.h" />
     <ClInclude Include="backbuffer.h" />
-    <ClInclude Include="Article.h" />
     <ClInclude Include="entity.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="InGameScene.h" />
     <ClInclude Include="iniParser.h" />
     <ClInclude Include="inputhandler.h" />
     <ClInclude Include="logmanager.h" />
+    <ClInclude Include="Material.h" />
     <ClInclude Include="MenuScene.h" />
     <ClInclude Include="PhysicsEngine.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="QuadTree.h" />
+    <ClInclude Include="Rectangle.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="sprite.h" />

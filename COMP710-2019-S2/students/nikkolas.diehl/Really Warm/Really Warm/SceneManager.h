@@ -1,4 +1,5 @@
 #pragma once
+
 #include "iniParser.h"
 #include "backbuffer.h"
 #include "InGameScene.h"
@@ -14,9 +15,9 @@ public:
 	~SceneManager();
 
 	//Draw and process
-	void Initialise(IniParser* m_iniParser, BackBuffer* m_pBackBuffer, int& screenWidth, int& screenHeight);
+	void Initialise(IniParser* m_iniParser, BackBuffer* m_pBackBuffer, int screenWidth, int screenHeight);
 	void Draw(BackBuffer& m_pBackBuffer, int& m_FPS, int& m_totalFramesPassed);
-	void Process(InputHandler* inputHandler, float deltaTime);
+	void Process(InputHandler* inputHandler, float deltaTime, int screenWidth, int screenHeight);
 
 	//Game states
 	enum State {

@@ -24,11 +24,10 @@ public:
 	int GetX() const;
 	int GetY() const;
 
-	void SetAngle(float angle);
+	void SetAngle(double angle);
 	float GetAngle() const;
 
 	void SetLength(int legnth);
-	int GetLength() const;
 
 	void SetCenter(int x, int y);
 	void SetHandleCenter();
@@ -53,7 +52,6 @@ protected:
 	int m_y;
 
 	float m_angle;
-	int m_imageLength;
 	int m_centerX;
 	int m_centerY;
 

@@ -14,21 +14,21 @@ SceneManager::~SceneManager()
 	inGameScene = 0;
 }
 
-void SceneManager::Initialise(IniParser* m_iniParser, BackBuffer* m_pBackBuffer, int& screenWidth, int& screenHeight)
+void SceneManager::Initialise(IniParser* m_iniParser, BackBuffer* m_pBackBuffer, int screenWidth, int screenHeight)
 {
 	inGameScene = new InGameScene();
 	inGameScene->Initialise(m_iniParser, m_pBackBuffer, screenWidth, screenHeight);
 }
 
 void
-SceneManager::Process(InputHandler* inputHandler, float deltaTime)
+SceneManager::Process(InputHandler* inputHandler, float deltaTime, int screenWidth, int screenHeight)
 {
 	switch (currentState) {
 	case(MAIN_MENU):
 
 		break;
 	case(INGAME):
-		inGameScene->Process(inputHandler, deltaTime);
+		inGameScene->Process(inputHandler, deltaTime, screenWidth, screenHeight);
 		break;
 	}
 }
