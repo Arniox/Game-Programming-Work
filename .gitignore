@@ -1,5 +1,7 @@
 FWT - 16945724.zip
+*.ipch
 *.opendb
+*/.svn
 *.svn
 *.db
 *.svn-base
