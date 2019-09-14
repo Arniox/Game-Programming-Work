@@ -17,14 +17,14 @@ public:
 
 	//Process Article Movement
 	void ProcessEntity(float deltaTime, 
-		Entity* character, std::vector<Walls*> walls, 
+		Entity* character, std::vector<Walls*>* walls, 
 		double screenWidth, double screenHeight);
 
 protected:
 
 	//Timestep
 	void TimeStepProcess(float deltaTime,
-		Entity* character, std::vector<Walls*> walls, 
+		Entity* character, std::vector<Walls*>* walls, 
 		double screenWidth, double screenHeight,
 		int timeStep);
 
@@ -36,7 +36,7 @@ protected:
 	void ComputeForceAndTorque(Entity* character);
 
 	//Calculate and resolve collisions
-	void DetectCollision(Entity* character, std::vector<Walls*> walls, double deltaTime);
+	void DetectCollision(Entity* character, std::vector<Walls*>* walls, double deltaTime);
 	void UpdatePhysicsResponse(Entity* character, Walls* wall);
 
 	//Log current object

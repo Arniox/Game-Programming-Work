@@ -61,6 +61,12 @@
     <Filter Include="Source Files\QuadTree">
       <UniqueIdentifier>{bb8e1616-2333-4d6f-a135-f4c1c83ecf03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\MenuInteraction">
+      <UniqueIdentifier>{53db14df-26fc-4031-b3d4-8561b2764bda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\MenuInteraction">
+      <UniqueIdentifier>{e78cb64e-5456-4ed7-bdf0-e6fd7d57af23}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="animatedsprite.cpp">
@@ -129,6 +135,15 @@
     <ClCompile Include="Material.cpp">
       <Filter>Source Files\EntityControllers</Filter>
     </ClCompile>
+    <ClCompile Include="BoundingBox.cpp">
+      <Filter>Source Files\EntityControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="SplashScreen.cpp">
+      <Filter>Source Files\SceneManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="SplashScreenImage.cpp">
+      <Filter>Source Files\MenuInteraction</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animatedsprite.h">
@@ -196,6 +211,15 @@
     </ClInclude>
     <ClInclude Include="Material.h">
       <Filter>Header Files\EntityControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="BoundingBox.h">
+      <Filter>Header Files\EntityControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashScreen.h">
+      <Filter>Header Files\SceneManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashScreenImage.h">
+      <Filter>Header Files\MenuInteraction</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

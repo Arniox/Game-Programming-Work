@@ -4,9 +4,9 @@
 //Locals
 #include "sprite.h"
 #include "backbuffer.h"
-#include "Rectangle.h"
 #include "Vector2.h"
 #include "Material.h"
+#include "BoundingBox.h"
 
 //Libraries
 #include <cassert>
@@ -45,7 +45,7 @@ public:
 	Material* GetMat();
 
 	//Get data
-	Rectangle* GetCollisionBox();
+	BoundingBox* GetCollisionBox();
 	Vector2* GetPos();
 	Vector2* GetVelocity();
 	double GetAngularVelocity() const;
@@ -61,7 +61,7 @@ private:
 
 protected:
 	//Main Vectors
-	Rectangle* entityBox;		//Collision box with position vector
+	BoundingBox* entityBox;		//Collision box with position vector
 	Vector2* linearVelocity;	//Velocity Vector
 	double anglularVelocity;	//Angular Velocity
 	double entityAngle;

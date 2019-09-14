@@ -11,7 +11,7 @@ PhysicsEngine::PhysicsEngine()
 : angularAcceleration(0.0)
 , currentFriction(SKIN_METAL)
 {
-	gravity = new Vector2(0.0, 9.81);
+	gravity = new Vector2(0.0, 20);
 	linearAcceleration = new Vector2();
 }
 PhysicsEngine::~PhysicsEngine()
@@ -21,16 +21,16 @@ PhysicsEngine::~PhysicsEngine()
 
 void 
 PhysicsEngine::ProcessEntity(float deltaTime,
-	Entity* character, vector<Walls*> walls, 
+	Entity* character, vector<Walls*>* walls, 
 	double screenWidth, double screenHeight)
 {
 	//double test = (*character->GetForce()).x;
-	TimeStepProcess(deltaTime, character, walls, screenWidth, screenHeight, 100);
+	TimeStepProcess(deltaTime, character, walls, screenWidth, screenHeight, 50);
 }
 
 void
 PhysicsEngine::TimeStepProcess(float deltaTime, 
-	Entity* character, std::vector<Walls*> walls, 
+	Entity* character, std::vector<Walls*>* walls, 
 	double screenWidth, double screenHeight,
 	int timeStep) 
 {
@@ -42,7 +42,14 @@ PhysicsEngine::TimeStepProcess(float deltaTime,
 		//Add forces back per frame
 		ComputeForceAndTorque(character);
 		ApplyForce(character, gravity);
-		ApplyForce(character, character->GetForce());
+
+		if (!character->GetMat()->inAir) {
+			ApplyForce(character, character->GetForce());
+			currentFriction = SKIN_METAL;
+		}
+		else {
+			currentFriction = MAT_AIR;
+		}
 
 		//Set angular acceleration
 		angularAcceleration = character->GetMat()->torque / character->GetMat()->momentOfIntertia;
@@ -98,14 +105,14 @@ PhysicsEngine::ComputeForceAndTorque(Entity* character) {
 }
 
 void 
-PhysicsEngine::DetectCollision(Entity* character, std::vector<Walls*> walls, double deltaTime)
+PhysicsEngine::DetectCollision(Entity* character, std::vector<Walls*>* walls, double deltaTime)
 {
+	//Refresh the inAir check
+	character->GetMat()->inAir = true;
+
 	//Iterate through all walls
 	vector<Walls*>::iterator wallIter;
-	for (wallIter = walls.begin(); wallIter != walls.end(); ++wallIter) {
-		//Refresh entity inAir state
-		character->GetMat()->inAir = true;
-		//Broad
+	for (wallIter = walls->begin(); wallIter != walls->end(); ++wallIter) {
 		if (character->GetCollisionBox()->CheckCollision((*wallIter)->GetCollisionBox())) {
 			//Update physics
 			UpdatePhysicsResponse(character, (*wallIter));
@@ -146,11 +153,6 @@ PhysicsEngine::UpdatePhysicsResponse(Entity* character, Walls* wall) {
 		normal->Copy(character->GetCollisionBox()->GetNormal());
 		double contactVel = (*rv).Dot(&(*normal));
 
-		//Character is in air when normal.y is not equal to 0
-		if (normal->y != 0) {
-			character->GetMat()->inAir = false;
-		}
-
 		//Do not resolve if velocities are seperating
 		if (contactVel > 0) {
 			return;
@@ -161,10 +163,15 @@ PhysicsEngine::UpdatePhysicsResponse(Entity* character, Walls* wall) {
 		//Calculate impulse scalar
 		double j = -(1.0 + e) * contactVel;
 		j /= (character->GetMat()->mass == INFINITY ? 0 : character->GetMat()->mass) +
-			(wall->GetMat()->mass == INFINITY ? 0 : wall->GetMat()->mass);
+			 (wall->GetMat()->mass == INFINITY ? 0 : wall->GetMat()->mass);
 
 		//Apply impulse
 		unique_ptr<Vector2> impulse = move((*normal).ScaleMult(j));
+
+		if (impulse->y > 0) {
+			character->GetMat()->inAir = false;
+		}
+
 		//Change velocity
 		if (character->GetMat()->mass != INFINITY) {
 			character->GetVelocity()->Minus(&(*(*impulse).ScaleMult(character->GetMat()->mass)));
@@ -180,6 +187,7 @@ void
 PhysicsEngine::LogCurrent(Entity* character) 
 {
 	//Log all
+	//Log for character data
 	string output = "Character == Pos: " + character->GetPos()->ToString();
 	output += " Linear Velocity: " + character->GetVelocity()->ToString();
 	output += " Angular Velocity: " + to_string(*character->GetAngularVelocity());
@@ -187,7 +195,10 @@ PhysicsEngine::LogCurrent(Entity* character)
 	output += " Torque: " + to_string(character->GetMat()->torque);
 	output += " Linear Acceleration: " + linearAcceleration->ToString();
 
-	LogManager::GetInstance().Log(output.c_str());
+	//Log for character inAir check
+	string output2 = "inAir = " + to_string(character->GetMat()->inAir);
+
+	LogManager::GetInstance().Log(output2.c_str());
 }
 
 

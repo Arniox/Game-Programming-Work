@@ -20,6 +20,8 @@ InputHandler::InputHandler()
 
 InputHandler::~InputHandler()
 {
+	mx_map_keyBoardLayout.clear();
+
 	if (m_pGameController)
 	{
 		SDL_JoystickClose(m_pGameController);
@@ -92,12 +94,8 @@ InputHandler::ProcessInput(Game& game)
 
 void
 InputHandler::updateKeyBoardLayout(std::string in, bool keyPressed) {
-	if (!checkExtistingKey(in)) {
-		mx_map_keyBoardLayout.emplace(in, keyPressed);
-	}
-	else {
-		mx_map_keyBoardLayout[in] = keyPressed;
-	}
+	//Assign key into map
+	mx_map_keyBoardLayout[in] = keyPressed;
 }
 
 bool

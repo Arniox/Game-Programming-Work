@@ -20,6 +20,8 @@ public:
 
 	void SetX(int x);
 	void SetY(int y);
+	void RotateNull(bool rotate);
+	bool GetRotate();
 
 	int GetX() const;
 	int GetY() const;
@@ -37,20 +39,16 @@ public:
 
 	Texture* GetTexture();
 
-protected:
-
 private:
 	Sprite(const Sprite& sprite);
 	Sprite& operator=(const Sprite& sprite);
-
-	//Member Data:
-public:
 
 protected:
 	Texture* m_pTexture;
 	int m_x;
 	int m_y;
 
+	bool rotateNull;
 	float m_angle;
 	int m_centerX;
 	int m_centerY;

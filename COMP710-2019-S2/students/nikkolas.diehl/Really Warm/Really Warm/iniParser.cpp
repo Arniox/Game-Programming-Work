@@ -10,9 +10,10 @@
 using namespace std;
 
 IniParser::IniParser()
-	:iniSettingsFile("assets/settings.ini")
-	,myFile()
-	,m_keyList()
+: iniSettingsFile("assets/settings.ini")
+, myFile()
+, m_keyList()
+, settingsMap()
 {
 	//Individual whole line
 	string line;
@@ -44,6 +45,7 @@ IniParser::IniParser()
 
 IniParser::~IniParser()
 {
+	settingsMap.clear();
 	myFile.close();
 }
 

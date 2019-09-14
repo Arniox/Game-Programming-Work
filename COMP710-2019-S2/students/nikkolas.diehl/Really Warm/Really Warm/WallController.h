@@ -11,10 +11,9 @@ public:
 	~WallController();
 
 	void Initialise(BackBuffer* m_pBackBuffer, double screenWidth, double screenHeight);
-	void Process(float deltaTime);
 	void Draw(BackBuffer& m_pBackBuffer);
 
-	std::vector<Walls*> GetWalls();
+	std::vector<Walls*>* GetWalls();
 
 private:
 	std::vector<Walls*> walls;

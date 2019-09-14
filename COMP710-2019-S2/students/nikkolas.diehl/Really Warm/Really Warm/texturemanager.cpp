@@ -49,7 +49,7 @@ TextureManager::GetTexture(const char* pcFilename)
 		{
 			LogManager::GetInstance().Log("Texture failed to initialise!");
 		}
-		
+
 		m_pLoadedTextures[pcFilename] = pTexture;
 	}
 	else

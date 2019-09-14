@@ -48,7 +48,7 @@ Entity::SetSize(double w, double h) {
 }
 
 //Return the collision box and thus the entity shape
-Rectangle* 
+BoundingBox* 
 Entity::GetCollisionBox() {
 	return entityBox;
 }

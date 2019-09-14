@@ -1,7 +1,7 @@
 #include "InGameScene.h"
 
 InGameScene::InGameScene()
-:mx_player(0)
+: mx_player(0)
 {
 }
 InGameScene::~InGameScene()
@@ -54,7 +54,6 @@ InGameScene::Process(InputHandler* ep_inputHander, float deltaTime, int screenWi
 
 	//Process entities
 	//Player
-	bool test = ep_inputHander->GetKeyBoardLayout("d");
 	mx_player->Process(ep_inputHander);
 
 	//Physics

@@ -16,6 +16,7 @@ Sprite::Sprite()
 , m_height(0)
 , m_angle(0.0f)
 , m_centerY(0)
+, rotateNull(true)
 {
 
 }
@@ -45,6 +46,18 @@ void
 Sprite::Draw(BackBuffer& backbuffer)
 {
 	backbuffer.DrawSprite(*this);
+}
+
+void
+Sprite::RotateNull(bool rotate)
+{
+	rotateNull = rotate;
+}
+
+bool
+Sprite::GetRotate()
+{
+	return rotateNull;
 }
 
 void 

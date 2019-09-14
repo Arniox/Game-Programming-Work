@@ -3,6 +3,7 @@
 #include "iniParser.h"
 #include "backbuffer.h"
 #include "InGameScene.h"
+#include "SplashScreen.h"
 #include "inputhandler.h"
 
 //Libraries
@@ -21,6 +22,7 @@ public:
 
 	//Game states
 	enum State {
+		SPLASH_SCREEN,
 		MAIN_MENU,
 		INGAME
 	};
@@ -30,5 +32,11 @@ public:
 	void ChangeState(State stateToChange);
 	//Scenes
 	InGameScene* inGameScene;
+	SplashScreen* splashScreenScene;
+
+private:
+	//Timing
+	const int SplashMax = 3;
+	double splashScreenTime = 0;
 };
 

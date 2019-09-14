@@ -9,8 +9,9 @@ Player::Player()
 Player::~Player()
 {
 	delete linearVelocity;
+	linearVelocity = 0;
 	delete force;
-
+	force = 0;
 	delete entityBox;
 	entityBox = 0;
 }
@@ -18,7 +19,7 @@ Player::~Player()
 void 
 Player::CreatePlayer(BackBuffer* backBuffer, double x, double y)
 {
-	entityBox = new Rectangle(0, 0, 0, 0);
+	entityBox = new BoundingBox(0, 0, 0, 0);
 
 	Initialise(backBuffer->CreateSprite("assets/Sprites/playership.png"));
 	SetSize(mo_sprite->GetWidth(), mo_sprite->GetHeight());
@@ -57,7 +58,7 @@ Player::Process(InputHandler* inputHandler)
 
 	//Jump
 	if (inputHandler->GetKeyBoardLayout("space")) {
-		force->y = -300.0;
+		force->y = -30000.0;
 	}
 	else {
 		force->y = 0;

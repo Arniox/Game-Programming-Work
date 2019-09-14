@@ -154,7 +154,8 @@ BackBuffer::DrawSprite(Sprite& sprite)
 	//Create destination point
 	SDL_Rect dest;
 	SDL_Rect src;
-	//SDL_Point rotPoint = { 0,0 };
+	//Rotate around 0, 0 for walls. Everything is centrally rotated.
+	SDL_Point rotPoint = { 0,0 };
 
 	src.x = 0;
 	src.y = 0;
@@ -169,7 +170,9 @@ BackBuffer::DrawSprite(Sprite& sprite)
 	//Create flip
 	SDL_RendererFlip flip = SDL_FLIP_NONE;
 
-	SDL_RenderCopyEx(m_pRenderer, sprite.GetTexture()->GetTexture(), (sprite.GetWidth() != 0 ? &src : NULL), &dest, sprite.GetAngle(), NULL, flip);
+	SDL_RenderCopyEx(m_pRenderer, sprite.GetTexture()->GetTexture(), 
+					 &src, &dest, sprite.GetAngle(), 
+					 (sprite.GetRotate() ? NULL : &rotPoint), flip);
 }
 
 void BackBuffer::DrawAnimatedSprite(AnimatedSprite & animatedSprite)
