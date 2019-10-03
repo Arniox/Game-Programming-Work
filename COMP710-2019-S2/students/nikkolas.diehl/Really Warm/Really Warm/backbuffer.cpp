@@ -1,3 +1,4 @@
+#define _CRTDBG_MAP_ALLOC
 // COMP710 GP 2D Framework 2019
 
 // This include:
@@ -29,23 +30,21 @@ BackBuffer::BackBuffer()
 , m_textGreen(0)
 , m_textBlue(0)
 {
-
 }
 
 BackBuffer::~BackBuffer()
 {
 	SDL_DestroyRenderer(m_pRenderer);
-	m_pRenderer = 0;
+	m_pRenderer = nullptr;
 
 	SDL_DestroyWindow(m_pWindow);
-	m_pWindow = 0;
+	m_pWindow = nullptr;
 
 	//Delete Texture manager
 	delete m_pTextureManager;
-	m_pTextureManager = 0;
+	m_pTextureManager = nullptr;
 
 	//Clear sprites
-
 
 	IMG_Quit();
 	SDL_Quit();
@@ -97,8 +96,9 @@ BackBuffer::Initialise(int width, int height, bool fullScreen)
 	SDL_Delay(1000);
 
 	TTF_Init();
-	fonts[0] = TTF_OpenFont("assets\\space Xrebron.ttf", 40); //Title Font
-	fonts[1] = TTF_OpenFont("assets\\space Xrebron.ttf", 20); //FPS font
+	fonts[0] = TTF_OpenFont("assets/space Xrebron.ttf", 40); //Title Font
+	fonts[1] = TTF_OpenFont("assets/space Xrebron.ttf", 20); //FPS font
+	fonts[2] = TTF_OpenFont("assets/nasalization-rg.ttf", 20); //Spacy font
 
 	m_pTextureManager = new TextureManager();
 	assert(m_pTextureManager);
@@ -149,7 +149,7 @@ BackBuffer::SetDrawColour(unsigned char r, unsigned char g, unsigned char b, uns
 }
 
 void 
-BackBuffer::DrawSprite(Sprite& sprite)
+BackBuffer::DrawSprite(Sprite& sprite, unsigned char alpha)
 {
 	//Create destination point
 	SDL_Rect dest;
@@ -157,40 +157,51 @@ BackBuffer::DrawSprite(Sprite& sprite)
 	//Rotate around 0, 0 for walls. Everything is centrally rotated.
 	SDL_Point rotPoint = { 0,0 };
 
-	src.x = 0;
-	src.y = 0;
+	src.x = sprite.GetSheetX();
+	src.y = sprite.GetSheetY();
 	src.w = sprite.GetWidth();
 	src.h = sprite.GetHeight();
 
 	dest.x = sprite.GetX();
 	dest.y = sprite.GetY();
-	dest.w = sprite.GetWidth();
-	dest.h = sprite.GetHeight();
+	dest.w = static_cast<int>(sprite.GetWidth() * sprite.GetSpriteScaler());
+	dest.h = static_cast<int>(sprite.GetHeight() * sprite.GetSpriteScaler());
+
+	//Add alpha before drawing
+	SDL_SetTextureAlphaMod(sprite.GetTexture()->GetTexture(), alpha);
+
+	SDL_RenderCopyEx(m_pRenderer, sprite.GetTexture()->GetTexture(), 
+					 &src, &dest, sprite.GetAngle(), 
+					 (sprite.GetRotate() ? NULL : &rotPoint), sprite.flipSprite);
+}
+
+void BackBuffer::DrawAnimatedSprite(AnimatedSprite & animatedSprite, unsigned char alpha)
+{
+	SDL_Rect dest;
+	SDL_Rect src;
+	//Rotate around 0, 0 for walls. Everything is centrally rotated.
+	SDL_Point rotPoint = { 0,0 };
+
+	src.x = animatedSprite.GetFrameCoords();
+	src.y = animatedSprite.GetCurrentPanel();
+	src.w = animatedSprite.GetFrameWidth();
+	src.h = animatedSprite.GetFrameHeight();
+
+	dest.x = animatedSprite.GetX();
+	dest.y = animatedSprite.GetY();
+	dest.w = static_cast<int>(animatedSprite.GetFrameWidth() * animatedSprite.GetSpriteScaler());
+	dest.h = static_cast<int>(animatedSprite.GetFrameHeight() * animatedSprite.GetSpriteScaler());
 
 	//Create flip
 	SDL_RendererFlip flip = SDL_FLIP_NONE;
 
-	SDL_RenderCopyEx(m_pRenderer, sprite.GetTexture()->GetTexture(), 
-					 &src, &dest, sprite.GetAngle(), 
-					 (sprite.GetRotate() ? NULL : &rotPoint), flip);
-}
-
-void BackBuffer::DrawAnimatedSprite(AnimatedSprite & animatedSprite)
-{
-	SDL_Rect dest;
-	SDL_Rect src;
-
-	src.x = animatedSprite.GetFrameCoords();
-	src.y = 0;
-	src.w = animatedSprite.GetFrameWidth();
-	src.h = animatedSprite.GetHeight();
-
-	dest.x = animatedSprite.GetX();
-	dest.y = animatedSprite.GetY();
-	dest.w = animatedSprite.GetFrameWidth();
-	dest.h = animatedSprite.GetHeight();
+	//Add alpha before drawing
+	SDL_SetTextureAlphaMod(animatedSprite.GetTexture()->GetTexture(), alpha);
 
 	SDL_RenderCopy(m_pRenderer, animatedSprite.GetTexture()->GetTexture(), &src, &dest);
+	SDL_RenderCopyEx(m_pRenderer, animatedSprite.GetTexture()->GetTexture(),
+					 &src, &dest, animatedSprite.GetAngle(),
+					 (animatedSprite.GetRotate() ? NULL : &rotPoint), flip);
 	
 }
 
@@ -217,6 +228,7 @@ void
 BackBuffer::LogSDLError()
 {
 	LogManager::GetInstance().Log(SDL_GetError());
+	LogManager::GetInstance().DestroyInstance();
 }
 
 void BackBuffer::SetTextColour(unsigned char r, unsigned char g, unsigned char b)
@@ -226,7 +238,7 @@ void BackBuffer::SetTextColour(unsigned char r, unsigned char g, unsigned char b
 	m_textBlue = b;
 }
 
-void BackBuffer::DrawText(int x, int y, const char * pcText, int font)
+void BackBuffer::DrawText(int x, int y, const char * pcText, int font, bool CENTER, int WRAP_LIMIT)
 {
 	//Declare
 	SDL_Color color;
@@ -236,14 +248,16 @@ void BackBuffer::DrawText(int x, int y, const char * pcText, int font)
 	color.a = 255;
 
 	//Pass objects to create the text
-	SDL_Surface* surface = TTF_RenderText_Solid(fonts[font], pcText, color);
+	SDL_Surface* surface = TTF_RenderText_Blended_Wrapped(fonts[font], pcText, color, WRAP_LIMIT);
+	int lengthOfCharacter = surface->w / sizeof(pcText);
+
 	SDL_Texture* texture = SDL_CreateTextureFromSurface(m_pRenderer, surface);
 	int w, h;
 	SDL_QueryTexture(texture, 0, 0, &w, &h);
 
 	//Destination
 	SDL_Rect destinationRectangle;
-	destinationRectangle.x = x;
+	((!CENTER) ? destinationRectangle.x = x : destinationRectangle.x = x - ((sizeof(pcText) / 2) * lengthOfCharacter));
 	destinationRectangle.y = y;
 	destinationRectangle.w = w;
 	destinationRectangle.h = h;
@@ -267,13 +281,15 @@ BackBuffer::CreateSprite(const char* pcFilename)
 	if (!pSprite->Initialise(*pTexture))
 	{
 		LogManager::GetInstance().Log("Sprite Failed to Create!");
+		LogManager::GetInstance().DestroyInstance();
+
 	}
 
 	return (pSprite);
 }
 
 AnimatedSprite*
-BackBuffer::CreateAnimatedSprite(const char* pcFilename, int frameCount, float frameWidth)
+BackBuffer::CreateAnimatedSprite(const char* pcFilename, int frameCount, int panelCount, float frameSpeed)
 {
 	assert(m_pTextureManager);
 	Texture* pTexture = m_pTextureManager->GetTexture(pcFilename);
@@ -283,13 +299,16 @@ BackBuffer::CreateAnimatedSprite(const char* pcFilename, int frameCount, float f
 	if (!pAnimatedSprite->Initialise(*pTexture))
 	{
 		LogManager::GetInstance().Log("Sprite Failed to Create!");
+		LogManager::GetInstance().DestroyInstance();
 	}
 	else 
 	{
-		pAnimatedSprite->SetFrameWidth((int)frameWidth);
-		pAnimatedSprite->SetFrameSpeed(24);
+		pAnimatedSprite->SetFrameWidth(pTexture->GetWidth() / frameCount);
+		pAnimatedSprite->SetFrameHeight(pTexture->GetHeight() / panelCount);
+
+		pAnimatedSprite->SetFrameSpeed(frameSpeed);
 		for (int i = 0; i < frameCount; ++i) {
-			pAnimatedSprite->AddFrame((int)(i*frameWidth));
+			pAnimatedSprite->AddFrame(i * (pTexture->GetWidth() / frameCount));
 		}
 	}
 

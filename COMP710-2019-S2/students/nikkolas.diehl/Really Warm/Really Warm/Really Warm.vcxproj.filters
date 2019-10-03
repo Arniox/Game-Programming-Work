@@ -105,14 +105,8 @@
     <ClCompile Include="iniParser.cpp">
       <Filter>Source Files\Parsers</Filter>
     </ClCompile>
-    <ClCompile Include="MenuScene.cpp">
-      <Filter>Source Files\SceneManagment</Filter>
-    </ClCompile>
     <ClCompile Include="SceneManager.cpp">
       <Filter>Source Files\SceneManagment</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files\Entities</Filter>
     </ClCompile>
     <ClCompile Include="PhysicsEngine.cpp">
       <Filter>Source Files\PhysicsEngine</Filter>
@@ -141,8 +135,47 @@
     <ClCompile Include="SplashScreen.cpp">
       <Filter>Source Files\SceneManagment</Filter>
     </ClCompile>
-    <ClCompile Include="SplashScreenImage.cpp">
+    <ClCompile Include="UIElement.cpp">
       <Filter>Source Files\MenuInteraction</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityProcessingUnit.cpp">
+      <Filter>Source Files\EntityControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Magazine.cpp">
+      <Filter>Source Files\EntityControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuScene.cpp">
+      <Filter>Source Files\SceneManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="InstructionScene.cpp">
+      <Filter>Source Files\SceneManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuFrame.cpp">
+      <Filter>Source Files\SceneManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="PauseMenu.cpp">
+      <Filter>Source Files\SceneManagment</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\EntityControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="User.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="AI.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="AIManager.cpp">
+      <Filter>Source Files\EntityControllers</Filter>
+    </ClCompile>
+    <ClCompile Include="WeaponManager.cpp">
+      <Filter>Source Files\EntityControllers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -182,14 +215,8 @@
     <ClInclude Include="inputhandler.h">
       <Filter>Header Files\FrameWork</Filter>
     </ClInclude>
-    <ClInclude Include="MenuScene.h">
-      <Filter>Header Files\SceneManagment</Filter>
-    </ClInclude>
     <ClInclude Include="SceneManager.h">
       <Filter>Header Files\SceneManagment</Filter>
-    </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Header Files\Entities</Filter>
     </ClInclude>
     <ClInclude Include="PhysicsEngine.h">
       <Filter>Header Files\PhysicsEngine</Filter>
@@ -218,8 +245,47 @@
     <ClInclude Include="SplashScreen.h">
       <Filter>Header Files\SceneManagment</Filter>
     </ClInclude>
-    <ClInclude Include="SplashScreenImage.h">
+    <ClInclude Include="UIElement.h">
       <Filter>Header Files\MenuInteraction</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityProcessingUnit.h">
+      <Filter>Header Files\EntityControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Magazine.h">
+      <Filter>Header Files\EntityControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuScene.h">
+      <Filter>Header Files\SceneManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="InstructionScene.h">
+      <Filter>Header Files\SceneManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuFrame.h">
+      <Filter>Header Files\SceneManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseMenu.h">
+      <Filter>Header Files\SceneManagment</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files\EntityControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="User.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="AI.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="AIManager.h">
+      <Filter>Header Files\EntityControllers</Filter>
+    </ClInclude>
+    <ClInclude Include="WeaponManager.h">
+      <Filter>Header Files\EntityControllers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

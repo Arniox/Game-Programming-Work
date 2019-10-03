@@ -1,3 +1,4 @@
+#define _CRTDBG_MAP_ALLOC
 #include "entity.h"
 
 Entity::Entity()
@@ -5,6 +6,7 @@ Entity::Entity()
 , entityBox(0)
 , linearVelocity(0)
 , entityAngle(0.0)
+, entityAngleRad(0.0)
 , anglularVelocity(0.0)
 , force(0)
 , mat()
@@ -13,10 +15,10 @@ Entity::Entity()
 }
 Entity::~Entity() {
 	delete mat;
-	mat = 0;
+	mat = nullptr;
 
 	delete mo_sprite;
-	mo_sprite = 0;
+	mo_sprite = nullptr;
 }
 
 //intialise entity with sprite
@@ -31,7 +33,7 @@ Entity::Initialise(Sprite* sprite) {
 //Set the position of the entity at x, y
 //This moves the entire collision box
 void
-Entity::SetCenter(double x, double y) {
+Entity::SetPos(double x, double y) {
 	entityBox->X(x);
 	entityBox->Y(y);
 }
@@ -45,6 +47,20 @@ Entity::SetSize(double w, double h) {
 
 	entityBox->Center()->x = entityBox->W() / 2;
 	entityBox->Center()->y = entityBox->H() / 2;
+}
+
+//Is the current entity dead
+bool
+Entity::IsDead()
+{
+	return mat->dead;
+}
+
+//Kill the current entity
+void
+Entity::Kill()
+{
+	mat->dead = true;
 }
 
 //Return the collision box and thus the entity shape
@@ -89,6 +105,12 @@ Entity::GetAngle()
 	return &entityAngle;
 }
 
+double* 
+Entity::GetRadAngle()
+{
+	return &entityAngleRad;
+}
+
 //Calculate the moment of intertia
 void
 Entity::CalculateBoxIntertia() 
@@ -118,9 +140,13 @@ Entity::Process(float deltaTime) {
 
 //Draw the given entity
 void 
-Entity::Draw(BackBuffer& backBuffer) {
+Entity::Draw(BackBuffer& backBuffer, unsigned char alpha) {
 	assert(mo_sprite);
+
+	//Set angle of sprite
+	mo_sprite->SetAngle(entityAngle);
+
 	mo_sprite->SetX(static_cast<int>(entityBox->X()));
 	mo_sprite->SetY(static_cast<int>(entityBox->Y()));
-	mo_sprite->Draw(backBuffer);
+	mo_sprite->Draw(backBuffer, alpha);
 }
