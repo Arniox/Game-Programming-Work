@@ -1,0 +1,1788 @@
+Revision: 1192
+Author: bjy5305
+Date: Monday, 30 September 2019 2:43:08 PM
+Message:
+All that I can for controller input
+----
+Added : /students/nikkolas.diehl/Gold - 16945724
+Added : /students/nikkolas.diehl/Gold - 16945724/Build Files
+Added : /students/nikkolas.diehl/Gold - 16945724/Gold Build - 16945724
+Added : /students/nikkolas.diehl/Gold - 16945724/Post-Mortem - 16945724.docx
+Added : /students/nikkolas.diehl/Gold - 16945724/~$st-Mortem - 16945724.docx
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/settings.ini
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AI.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AI.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AIManager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AIManager.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InstructionScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/User.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/WeaponManager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/WeaponManager.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/inputhandler.cpp
+
+Revision: 1185
+Author: bjy5305
+Date: Monday, 30 September 2019 1:13:17 PM
+Message:
+- Added basic weapon manager
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AIManager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj.filters
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.h
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/WeaponManager.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/WeaponManager.h
+
+Revision: 1183
+Author: bjy5305
+Date: Monday, 30 September 2019 12:52:35 PM
+Message:
+Ai now fully working. Need to add more and add more weapons
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/settings.ini
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AI.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/User.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/WallController.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/inputhandler.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/inputhandler.h
+
+Revision: 1176
+Author: bjy5305
+Date: Monday, 30 September 2019 11:24:14 AM
+Message:
+Ai now working somewhat and shooting at you. YAY!
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AIManager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AI.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Magazine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Magazine.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+
+Revision: 1173
+Author: bjy5305
+Date: Monday, 30 September 2019 10:50:49 AM
+Message:
+- Updated enemy sprite
+- Enemies now process nearly correctly and draw correctly.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AIManager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/settings.ini
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AI.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/EnemySpriteSheet-Large.png
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AI.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AIManager.h
+
+Revision: 1153
+Author: bjy5305
+Date: Sunday, 29 September 2019 10:41:39 PM
+Message:
+More work on AI and the AI manager
+Last push for the night
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AIManager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AI.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AI.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AIManager.h
+
+Revision: 1152
+Author: bjy5305
+Date: Sunday, 29 September 2019 10:11:40 PM
+Message:
+- Heaps more work on AI
+- They should now have stateful movement and behaviour. Very simple right now. I will have to finish this later.
+- Weapon control is now entirely dictated by player class and no longer directly from input handler.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.h
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/settings.ini
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AI.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/User.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AI.h
+
+Revision: 1148
+Author: bjy5305
+Date: Sunday, 29 September 2019 9:17:15 PM
+Message:
+- Finished abstracting the player class and now have an AI class and User class separate
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/settings.ini
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AI.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/User.cpp
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/EnemySpriteSheet-Large.png
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/AI.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/User.h
+
+Revision: 1144
+Author: bjy5305
+Date: Sunday, 29 September 2019 8:33:22 PM
+Message:
+- Added ability to restart when you die
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/settings.ini
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PauseMenu.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.cpp
+
+Revision: 1143
+Author: bjy5305
+Date: Sunday, 29 September 2019 8:18:22 PM
+Message:
+- Started work on AI
+- Scene manager will now completely reset the ingame state when you go back to the main menu.
+- Added some extra stuff to the pause screen so it knows when the player dies and has a loose screen now. Still WIP
+- A little more sound work
+- Added health bar now
+- Started segregated out the player from the AI
+----
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/AIManager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj.filters
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.h
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/settings.ini
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/AI.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.h
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/User.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Magazine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Magazine.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/AI.h
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/AIManager.h
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/User.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PauseMenu.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.cpp
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Images/healthBar.png
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PauseMenu.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/UIElement.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/UIElement.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/game.cpp
+
+Revision: 1140
+Author: bjy5305
+Date: Sunday, 29 September 2019 6:38:49 PM
+Message:
+- Added bullet falling sound working
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.h
+
+Revision: 1138
+Author: bjy5305
+Date: Sunday, 29 September 2019 6:11:06 PM
+Message:
+Adding more sound features
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.h
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/settings.ini
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Magazine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Magazine.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.h
+Deleted : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/RandomDeathSounds/grunt.wav
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/grunt.wav
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/shellsFalling.wav
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Material.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Material.h
+
+Revision: 1136
+Author: bjy5305
+Date: Sunday, 29 September 2019 4:37:39 PM
+Message:
+- Added menu sounds, and basic ingame music plus some basic other sounds. Made them controllable with channels and channel groups.
+- Two channelsGroups exist, one for the menu and one for ingame
+- Inside the ingame channelGroup, there are two channels. One for effects and one for music. This allows me to pause them individually. Although atm, this is kinda buggy so when I pause, I actually just pause the entire ingame sounds channel group or change the entire group volume.
+- Added button noises
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/settings.ini
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PauseMenu.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.h
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/clickNoise.wav
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/reloadNoise.wav
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InstructionScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/MainMenuScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/MenuFrame.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/MenuFrame.h
+
+Revision: 1121
+Author: bjy5305
+Date: Sunday, 29 September 2019 1:32:12 PM
+Message:
+- Added sounds and started working on adding sounds to the game.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/settings.ini
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.h
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/RandomDeathSounds/grunt.wav
+Deleted : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/grunt.wav
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/inGameMusic.wav
+
+Revision: 1111
+Author: bjy5305
+Date: Saturday, 28 September 2019 9:22:05 PM
+Message:
+
+----
+Modified : /students/nikkolas.diehl/Really Warm/Release/assets/settings.ini
+
+Revision: 1110
+Author: bjy5305
+Date: Saturday, 28 September 2019 9:20:43 PM
+Message:
+Last push for the night
+
+- Made sure the files from debug where the same in release after all my changes
+
+Tomorrow TODO:
+- Add simple AI by abstracting out the player entity into an Actor with child classes as player and enemy.
+- Add sound to fulfil the requirements
+- Add some form of basic level. Probably just constantly spawning enemies and weapons.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Release/assets/settings.ini
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Images/blackBacking.png
+Modified : /students/nikkolas.diehl/Really Warm/Release/assets/Images/buttonSpriteSheet.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Images/pauseMenu.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Potra.ttf
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/nasalization-rg.ttf
+
+Revision: 1109
+Author: bjy5305
+Date: Saturday, 28 September 2019 9:18:19 PM
+Message:
+- Pause menu is finished and looks amazing with alpha blending and works perfectly.
+- Added pause menu backing which is larger and stretches upwards and downwards to fill a strip
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/settings.ini
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PauseMenu.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/UIElement.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/UIElement.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/game.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InstructionScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/MainMenuScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/MenuFrame.h
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Images/pauseMenu.png
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SplashScreen.cpp
+
+Revision: 1107
+Author: bjy5305
+Date: Saturday, 28 September 2019 7:57:01 PM
+Message:
+- Added alpha blending to the drawing of any and all sprites (animated or not). Most of everything is currently drawn with alpha of 255. Pause menu is drawn with half alpha
+- Added some pause menu settings to the settings.ini
+- Added more work to the pause menu. It's basically done. I just have to get it working now ingame
+----
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/settings.ini
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Magazine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PauseMenu.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PauseMenu.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/UIElement.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/UIElement.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InstructionScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/MainMenuScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SplashScreen.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/animatedsprite.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/animatedsprite.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/sprite.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/sprite.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/texturemanager.cpp
+
+Revision: 1105
+Author: bjy5305
+Date: Saturday, 28 September 2019 7:13:57 PM
+Message:
+- Added instructions to instruction scene.
+- Added some more fonts that look better
+- Quadtree can now be drawn or not using data driven bool
+- Instruction list draws from settings file
+- Started adding pause menu
+- Added black backing for both the instruction menu and the pause menu
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj.filters
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/settings.ini
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/PauseMenu.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/PauseMenu.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/UIElement.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/UIElement.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/game.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InstructionScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/MainMenuScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/MenuFrame.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SplashScreen.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.h
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Images/blackBacking.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Potra.ttf
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/nasalization-rg.ttf
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InstructionScene.h
+
+Revision: 1104
+Author: bjy5305
+Date: Saturday, 28 September 2019 6:25:24 PM
+Message:
+- Data driven design added to the bullets and weapons/magazines
+- Escape button now no longer quits game. Adding ingame menu now.
+
+Still golden build: 0 Warnings, 0 Errors, 0 Memory leaks
+----
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/settings.ini
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Magazine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Magazine.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.h
+
+Revision: 1103
+Author: bjy5305
+Date: Saturday, 28 September 2019 6:15:21 PM
+Message:
+- Data driven design for weapons
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.h
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/settings.ini
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.cpp
+
+Revision: 1102
+Author: bjy5305
+Date: Saturday, 28 September 2019 5:58:45 PM
+Message:
+- Added data driven design to the walls and player. Adding it now to the weapons and bullets.
+- Updated the settings file to recognise this
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/settings.ini
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/WallController.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/WallController.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/iniParser.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/iniParser.h
+
+Revision: 1101
+Author: bjy5305
+Date: Saturday, 28 September 2019 5:30:41 PM
+Message:
+- Added instructions scene
+- Added text wrap and smooth drawing of text in the back buffer
+- Further updated the buttonSpriteSheet
+- Added abstraction to the main menu and instruction menu
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj.filters
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/UIElement.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/UIElement.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/game.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/InstructionScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/MainMenuScene.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/MenuFrame.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/MenuFrame.h
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Images/buttonSpriteSheet.png
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SplashScreen.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.h
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/InstructionScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/Images/buttonSpriteSheet.png
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/MainMenuScene.h
+
+Revision: 1099
+Author: bjy5305
+Date: Saturday, 28 September 2019 3:19:11 PM
+Message:
+- Added selectable button states so now the keyboard, mouse and tomorrow, the controller can control the buttons properly. Also added the proper exit button so that it will exit the game.
+- Updated the button sprite sheet so that it was more visible when you select a button. It has a nice little blood splatter as well on the button when hovered which was accidental but turned out quite cool
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/inputhandler.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/inputhandler.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/MainMenuScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/Images/buttonSpriteSheet.png
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/MainMenuScene.h
+
+Revision: 1094
+Author: bjy5305
+Date: Friday, 27 September 2019 7:10:01 PM
+Message:
+Reduced bullet count to 20
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+
+Revision: 1093
+Author: bjy5305
+Date: Friday, 27 September 2019 7:08:44 PM
+Message:
+Found the issue as to why the debug build was so laggy. I think it has to do with the way the debug mode treats vectors and iterators possibly. I simply reduced the bullet count on the minigun down to 200 instead of 20,000 and since every single entity is put into one array and then iterated through when doing quadtree inserts, in debug mode this must be insanely performance intensive. Reducing the count to 200 has allowed the debug build to become playable. On monday the minigun will only have 20 bullets anyways, so this wont be a problem
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+
+Revision: 1092
+Author: bjy5305
+Date: Friday, 27 September 2019 7:04:46 PM
+Message:
+Final push for the night
+
+- 0 Warnings, 0 Errors, 0 Memory leaks.
+- Perfect warning level 3 build.
+
+Unfortunately, due to how the debug build of visual studio and C++ works, with the way I am querying 5 times per frame, and doing very complex quadtree inserts, debug mode ingame runs at about 1 frame per second or less. I will try fix this or just reduce it from querying so often but on release build, this performance is butter smooth at 60fps with highly accurate tests so I would rather leave it as is and not use debug mode unless I am trying to find specific variables or find out why a crash happens.
+I will alter some data so that on monday, I can show the gold build with no issues.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+
+Revision: 1091
+Author: bjy5305
+Date: Friday, 27 September 2019 7:00:36 PM
+Message:
+Last push for the night.
+
+- Did more work on the main menu and mostly got it finished. Started adding some HUD elements. Right now there is FPS, PPS (processes per frame), and Entities being processed / total entities
+- Did some work on the bullet class and made both Kill() and IsDead() a global entity function so that they could be used by any other entity
+- A few more small optimizations on the quadtree and processing overall. Unfortunately, with how fast the bullets move, there isn't a good, cheap way to make sure they don't tunnel through walls. I could technically just do quadtree inserts as many times per frame as I am doing processing but this is quite intensive and may drop frames the more entities being processed. Right now my quadtree is running butter smooth so I don't really want to touch it. So in order to fix bullets tunnelling and escaping the map and then being forever processed as they fall down forever, I have a BindEntity function in the physics engine that simply kills an entity instantly when it leaves the screen.
+
+- Some small work on other scenes for optimization and etc.
+- Removed unused button png image
+- Added sprite sheet for button
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/game.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.h
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Images/buttonSpriteSheet.png
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/game.h
+Deleted : /students/nikkolas.diehl/Really Warm/Release/assets/Images/unclickedButton.png
+
+Revision: 1089
+Author: bjy5305
+Date: Friday, 27 September 2019 6:00:59 PM
+Message:
+Added main menu. The play button works but others are WIP
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/UIElement.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/UIElement.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/MainMenuScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/sprite.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/sprite.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/MainMenuScene.h
+Deleted : /students/nikkolas.diehl/Really Warm/Debug/assets/Images/unclickedButton.png
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+
+Revision: 1087
+Author: bjy5305
+Date: Friday, 27 September 2019 4:07:25 PM
+Message:
+- Work on the main menu.
+- Updated the unlickedButton.png
+- Added some text centre options for text drawing. Especially useful for buttons
+- Add some more stuff to weapons and magazines. There's a small bug although I really don't care too much, where bullets will sometimes, if they're fast enough, tunnel through walls. Again this isn't that worrisome.
+- Added and starting working on a main menu scene
+- Added some huge optimizations to the quadtree. Previously, when the parent quad filled up, it would simple insert into the children with the next point whilst keeping it's own points map still full. What this meant is that when a query occurred, it was technically having to query 5 total quads for each quad. I've fixed this with a RemoveInsert function that, on a quad divide, removes the parent entities and puts them inside the children.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj.filters
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/UIElement.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/game.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/MainMenuScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/MainMenuScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/Images/unclickedButton.png
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.h
+
+Revision: 1085
+Author: bjy5305
+Date: Friday, 27 September 2019 3:00:24 PM
+Message:
+You can now fire and have an infinite amount of particles/bullets or whatever, as long as they have a doNotProcess state or death state. The quadtree will only ever insert items that are not dead and not in a doNotProcess state.
+
+Temporarily set the minigun ammo to 20,000 for testing
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+
+Revision: 1084
+Author: bjy5305
+Date: Friday, 27 September 2019 2:39:06 PM
+Message:
+Optimisation passes
+
+- Also allowed bullets to collide with the player and added an "isPhase" bool to the material so stuff like bullets doesn't slow the player down from walking through them.
+This feature should only be run in release build as it is un-playable in the debug mode
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Material.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Material.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.h
+
+Revision: 1076
+Author: bjy5305
+Date: Friday, 27 September 2019 11:55:53 AM
+Message:
+- Fixed all memory leaks
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/BoundingBox.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/BoundingBox.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.h
+
+Revision: 1057
+Author: bjy5305
+Date: Thursday, 26 September 2019 10:08:55 PM
+Message:
+last last push for the night
+
+- Temporarily disabled drawing of the quadtree. Activate it if you want.
+
+Build for release and debug with 0 errors/warnings. A few memory leaks that need to be fixed
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+
+Revision: 1056
+Author: bjy5305
+Date: Thursday, 26 September 2019 10:05:28 PM
+Message:
+Last push for the night
+
+There definitely needs to be some more optimisations at a later date. Allowing all bullets to constantly be processed should, in theory, with the quadtree allow for it to process easily with no lag, yet it drops quite a lot. Deletions and constantly clearing things needs to be fixed up later
+
+- Increased max bullet bounce count from 2 to 5
+- Increased max bullet count on the minigun temporarily for fun cause it looks awesome spraying bullets everywhere with the quadtree constantly drawing quads everywhere.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.h
+
+Revision: 1055
+Author: bjy5305
+Date: Thursday, 26 September 2019 9:59:59 PM
+Message:
+Draw function in quad tree class now correctly draws a box for every quad. Looks very cool
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+
+Revision: 1054
+Author: bjy5305
+Date: Thursday, 26 September 2019 9:57:58 PM
+Message:
+- Quadtree optimisations: The query function is now run outside of the time-stepped processing function. This assumes that a quad or area will remain mostly stable and the same positions. The time steps is simply to calculate collisions at a more accurate level. Now with the time-stepped processing, and the quadtree combined, the fps is much better. Although, if there is time; and I'll speak to the lecturer about it; there are some optimizations I could work on. For example, instead of deleting everything, every single quadtree clear, I could just overwrite.
+
+- Quadtree optimisations: The quadtree now has a maximum depth variable that I can set. Right now this is at 4 and it seems quite stable. The more increased this is, the deeper it can subdivide. However, this was needed as when all the bullets where in one single area, at the same point, it kept subdividing over and over trying to split them into separate quads. This was only an issue when there was a lot of entities
+
+- Optimisations: The time-steps (which I am naming ticks from now on) have been reduced to 5 per frame. 10 was nice, and still runs very well, but is not necessary and 5 ticks per frame is easily enough to get accurate collisions so it has been reduced.
+
+Some other small changes where made.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.h
+
+Revision: 1052
+Author: bjy5305
+Date: Thursday, 26 September 2019 9:28:42 PM
+Message:
+- FUCK YES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+- HOLY FUCK YES
+
+I got a working quadtree with axis aligned bounding box checks working!!!!!!!!
+FUCK YES!!!
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.h
+
+Revision: 1047
+Author: bjy5305
+Date: Thursday, 26 September 2019 7:36:58 PM
+Message:
+More work on quadtree implementation
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+
+Revision: 1046
+Author: bjy5305
+Date: Thursday, 26 September 2019 7:33:53 PM
+Message:
+Fixed a few more memory leaks.
+https://www.deleaker.com/
+https://marketplace.visualstudio.com/items?itemName=ArkadyShapkin.VisualLeakDetectorforVisualC
+https://www.softwareverify.com/cpp-memory.php
+http://drmemory.org/
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/inputhandler.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/game.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/texturemanager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/logmanager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/texture.cpp
+
+Revision: 1044
+Author: bjy5305
+Date: Thursday, 26 September 2019 7:02:23 PM
+Message:
+- Cleared/Fixed over 100 memory leaks. It turns out, setting a pointer to 0 still counts as stored memory, so it's like a massive fuck you. Now, all deletions of references/pointers are set to nullptr which removed over 100 memory leaks I've been struggling to track down.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/WallController.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/inputhandler.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Magazine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/UIElement.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/game.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Material.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SplashScreen.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/animatedsprite.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/sprite.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/texturemanager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/iniParser.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/BoundingBox.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/logmanager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/texture.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/main.cpp
+
+Revision: 1034
+Author: bjy5305
+Date: Thursday, 26 September 2019 1:32:41 PM
+Message:
+Fixed release build files
+----
+Deleted : /students/nikkolas.diehl/Really Warm/Release/assets/Sounds/Explosion.wav
+Deleted : /students/nikkolas.diehl/Really Warm/Release/assets/Sounds/Move.wav
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sounds/RandomDeathSounds
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sounds/RandomDeathSounds/bloodSquirt.wav
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sounds/RandomDeathSounds/fleshAndBoneTearing.wav
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sounds/RandomDeathSounds/neckSnap.wav
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sounds/RandomDeathSounds/pain.wav
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sounds/RandomDeathSounds/screamingAgony.wav
+Deleted : /students/nikkolas.diehl/Really Warm/Release/assets/Sounds/Shoot.wav
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sounds/grunt.wav
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sounds/miniGun.wav
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sounds/normalFire.wav
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sounds/shellsFalling.wav
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sounds/shotGun.wav
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sounds/walking.wav
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/Bullet.png
+
+Revision: 1033
+Author: bjy5305
+Date: Thursday, 26 September 2019 12:18:05 PM
+Message:
+Small fix ups
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.h
+
+Revision: 1031
+Author: bjy5305
+Date: Thursday, 26 September 2019 11:54:01 AM
+Message:
+- Reworked the quadtree slightly and will hopefully finish it today.
+- Interesting article/question on collision resolution that I may come back to or use in future: https://stackoverflow.com/questions/345838/ball-to-ball-collision-detection-and-handling
+- Added some overhead to the vector2 class.
+- Added a normal return from the resolve collisions physics function so the bullets can reverse angle.
+- Removed the need for the BBPointRefrence. Now the quadtree will simply use a map between an entity and their position.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj.filters
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.h
+Deleted : /students/nikkolas.diehl/Really Warm/Really Warm/BBPointRefrence.cpp
+Deleted : /students/nikkolas.diehl/Really Warm/Really Warm/BBPointRefrence.h
+
+Revision: 1021
+Author: bjy5305
+Date: Wednesday, 25 September 2019 10:01:13 PM
+Message:
+Last push for the night
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+
+Revision: 1020
+Author: bjy5305
+Date: Wednesday, 25 September 2019 9:56:49 PM
+Message:
+- More work on the quad tree.
+- Quad tree now takes in two points that reference the object itself. These points can then be queried and if a point is queried, it returns all entity references for points that also exist in that same quad
+- Still WIP. There's an issue with memory leaking
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj.filters
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/BoundingBox.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/BBPointRefrence.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/BBPointRefrence.h
+
+Revision: 1016
+Author: bjy5305
+Date: Wednesday, 25 September 2019 7:39:17 PM
+Message:
+- Started work on finishing the quad tree.
+- Added a BBPointReference class. This is a backwards reference to an entity and a given bounding box as a singular point. For each entity, 2 BBPointReference's will be stored in the quad tree. One for the top left and one for the bottom right corners of the bounding boxes of each entity. What this means is that I can just query a given points quadtree to find 4 other points. Each of those points are connected to a greater BoundingBox but now, with that idea in mind, the singular point only has two check 3 other bounding boxes for collisions.
+
+Each entity will, for both of its reference points, check the quad trees that those points exist in.
+So the pseudo code for the query is:
+
+QueryThisPoint(BBPointReference)
+Check if this entity, attached to this point, collides with any of the 3 other entities' colliding boxes referenced points in my quad/area.
+If not, then return;
+If yes, then return list of collisions;
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.h
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/BBPointRefrence.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/BBPointRefrence.h
+
+Revision: 1013
+Author: bjy5305
+Date: Wednesday, 25 September 2019 6:20:38 PM
+Message:
+- Added random shake to the weapons when firing. Different weapons have different shake
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/BoundingBox.cpp
+
+Revision: 1012
+Author: bjy5305
+Date: Wednesday, 25 September 2019 5:41:21 PM
+Message:
+Made throwing weapons a lot more stable and similar between weights of the guns
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/BoundingBox.cpp
+
+Revision: 1011
+Author: bjy5305
+Date: Wednesday, 25 September 2019 5:27:19 PM
+Message:
+- Previously the force being applied was dis-proportionate to the time steps and would massively increase as time steps went down. This has been corrected and the force being applied is ALWAYS scaled off of the base deltaTime whilst velocity, and position is applied with normal physics calculations; scaling off of the processed deltaTime.
+- More optimisations. I will have to add a quadtree at this point. With only 28 entities on screen, the amount of checks being done right now is N^2 so a total 784 checks per individual time step. A total 39200 checks every single frame if the time steps are at 50. My current optimisations bring this down to about 4000 when all the bullets are currently on screen. A quadtree would improve the complexity time to N*Log(N) so with 28 items, this would be about 41 checks meaning a total of 2050 checks every single frame at 50 time steps, or just 410 at 10 timesteps. This would hugely improve my processing time per frame and with my current optimisations this could be as low as 100 checks per frame.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/game.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.h
+
+Revision: 1010
+Author: bjy5305
+Date: Wednesday, 25 September 2019 4:13:40 PM
+Message:
+- Removed un-needed sounds
+- Added a bunch of sounds that will be used in future
+- Angle of throw and angle of bullets firing is now correct. I will add some random angle increments depending on the gun so the bullets are not so accurate
+- Some optimisation has been done to try and make the fps better when there's lot of bullets. Now when a bullet bounces up to a certain limit (now 2) it will stop being processed altogether but will still be drawn allowing for bullets to build up over time.
+- Reduced the time steps. I need to play around with the forces because at lower time steps, the forces become weirdly quite small.
+- Added extra guns to test to the ingame scene.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Magazine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.h
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/RandomDeathSounds
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/grunt.wav
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/shellsFalling.wav
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Material.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Material.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.cpp
+Deleted : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/Explosion.wav
+Deleted : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/Move.wav
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/RandomDeathSounds/bloodSquirt.wav
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/RandomDeathSounds/fleshAndBoneTearing.wav
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/RandomDeathSounds/neckSnap.wav
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/RandomDeathSounds/pain.wav
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/RandomDeathSounds/screamingAgony.wav
+Deleted : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/Shoot.wav
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/miniGun.wav
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/normalFire.wav
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/shotGun.wav
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sounds/walking.wav
+
+Revision: 1006
+Author: bjy5305
+Date: Wednesday, 25 September 2019 11:23:11 AM
+Message:
+- Fixed bullet collision
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.h
+
+Revision: 999
+Author: bjy5305
+Date: Tuesday, 24 September 2019 9:26:09 PM
+Message:
+Bullets now fire!!
+Although incorrectly. This will be fixed tomorrow
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+
+Revision: 997
+Author: bjy5305
+Date: Tuesday, 24 September 2019 9:20:14 PM
+Message:
+- Added ability to throw your weapon... kinda. Its rotation and angle is incorrect.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/inputhandler.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Magazine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+
+Revision: 994
+Author: bjy5305
+Date: Tuesday, 24 September 2019 8:55:02 PM
+Message:
+Plan to use the following free application to find memory leaks: https://kinddragon.github.io/vld/
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Magazine.cpp
+
+Revision: 993
+Author: bjy5305
+Date: Tuesday, 24 September 2019 8:51:13 PM
+Message:
+- More work on bullet mechanics. Bullets now correctly spawn with a fire rate and will not spawn anymore if they're all currently alive. I plan to add a permanent death functionality so there is a physically limited amount of bullets per weapon you can pick up.
+- Bullets now correctly spawn at the tip of the gun and rotated 180 degrees off of the current angle which will be easy to fix
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Magazine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Magazine.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/BoundingBox.cpp
+
+Revision: 992
+Author: bjy5305
+Date: Tuesday, 24 September 2019 8:08:54 PM
+Message:
+- Fixed weapon rotation and now calculating the spawn point of a bullet or the exit point.
+- Added bullet class and bullet manager which named MAGAZINE. Each weapon will have a magazine that is pre-loaded in the setup of a level/scene
+- Added bullet image
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj.filters
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/Magazine.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/Magazine.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/Bullet.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.cpp
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/Bullet.png
+
+Revision: 979
+Author: bjy5305
+Date: Monday, 23 September 2019 9:53:32 PM
+Message:
+Alot more work on the "use" of weapons.
+
+- Added some corrections to the sprite rotations for entities that need it. There is now a flipSprite SDL_RendererFlip variable for all sprites that is default NONE but entities like weapons will correctly flip so matter what direction they're facing, it always looks like they're facing up.
+- Added a case in entity processing unit that continues out of a loop if the current entity being processed is a weapon and is attached because in this state, the given entity should not collide with anything or move with gravity.
+- Instead, within the weapon processing function, if a weapon is attached to something, the weapon will move and rotate off that given entity based on the mouse pointer and attached entity position
+- Input handler GetMousePos now returns a smart Vector2 pointer.
+- Fixed some vector2 math and then reverted it.
+- Reduced the time steps for the physics engine to 50 instead of 100. This doubles performance and the change is visually not that noticeable
+- Tried to fix some impulse mechanics not allowing multiple entities to stack but gave up because it wont be that useful or problematic to my game
+- Weapon class now has an attach, de-attach and attachment class/data. Each weapon keeps track of if it's attached to something and what it's being attached to and the entity processing unit now detects when a weapon collides with a player or enemy and attaches the weapon to the given entity. Will add a throw button to de-attach the weapon later.
+
+Next to add is bullet mechanics and then AI
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/inputhandler.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/inputhandler.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/sprite.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/sprite.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.h
+
+Revision: 972
+Author: bjy5305
+Date: Monday, 23 September 2019 5:07:53 PM
+Message:
+More work on weapon collision and such
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.h
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/ActorSpriteSheet-Large.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/ActorSpriteSheet-Medium.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/ActorSpriteSheet-Small.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/ActorSpriteSheet-Tiny.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/ActorSpriteSheet-VerySmall.png
+Modified : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/Gifs/LeftWardsMovement.gif
+Modified : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/Gifs/NotMoving.gif
+Modified : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/Gifs/RightWardsMovement.gif
+Modified : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/LeftWardsSheet.png
+Modified : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/NotMoving.png
+Modified : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/RightWardsSheet.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/Ak47.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/ChainSaw.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/GrenadeLauncher.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/HomeingLauncher.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/LMG.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/MiniGun.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/Pistol.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/PixelWeapons.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/PumpShotgun.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/RailGun.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/Remington.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/RocketLauncher.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/SMG.png
+
+Revision: 940
+Author: bjy5305
+Date: Monday, 23 September 2019 3:03:00 PM
+Message:
+More work on weapons and implementation of correct attachment and physics
+
+- Added some more customisability to animating sprites so they can rotate (this is WIP)
+- Added a bunch of code to the weapon class. A weapon can now display
+- Added the following weapon sprites:
+  - Ak47
+  - ChainSaw
+  - GrenadeLauncher
+  - HomingLauncher
+  - LMG
+  - MiniGun
+  - Pistol
+  - PumpShotgun
+  - RailGun
+  - Remington
+  - RocketLauncher
+- Also added a sprite sheet of a bunch more guns incase I want to add more later. Might also not get all of the above weapons implemented in time, but the goal is to get at least the shotgun, pistol, minigun and LMG working for the gold build
+
+- Fixed a few more bugs and memory leaks although there's still a few
+
+
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/inputhandler.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.cpp
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/Ak47.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/ChainSaw.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/GrenadeLauncher.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/HomeingLauncher.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/LMG.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/MiniGun.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/Pistol.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/PixelWeapons.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/PumpShotgun.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/RailGun.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/Remington.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/RocketLauncher.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/SMG.png
+
+Revision: 912
+Author: bjy5305
+Date: Friday, 20 September 2019 6:36:04 PM
+Message:
+Added differing qualities of the sprite sheet for possible use as differing graphical settings.
+----
+Added : /students/nikkolas.diehl/Really Warm/.vs
+Added : /students/nikkolas.diehl/Really Warm/.vs/Really Warm
+Added : /students/nikkolas.diehl/Really Warm/.vs/Really Warm/v15
+Added : /students/nikkolas.diehl/Really Warm/.vs/Really Warm/v15/ipch
+Added : /students/nikkolas.diehl/Really Warm/.vs/Really Warm/v15/ipch/AutoPCH
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/ActorSpriteSheet-Large.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/ActorSpriteSheet-Medium.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/ActorSpriteSheet-Small.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/ActorSpriteSheet-Tiny.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/ActorSpriteSheet-VerySmall.png
+
+Revision: 911
+Author: bjy5305
+Date: Friday, 20 September 2019 6:34:55 PM
+Message:
+- Updated and fixed sprite images/gifs/sprite sheets and made them higher quality and reduced the size of the sprites individual frames
+- The sprite creation is now done through the animatedsprite.cpp class which does all the processing and correctly calculates the frame height and width based on the total image size and frame count. That way there's only 2 int constants that in the player class to reduce the amount of mess
+- Animated sprite now correctly also uses "currentPanel" which determines the height of the sprite row/frames so that I can have multiple sprite animations happen in one single 2D sprite sheet.
+- Player class has been updated to reflect these changes
+- Not moving now correctly runs the not moving animation
+- Moving right and moving left now correctly run the moving right and moving left animations respectively
+- Backbuffer has been updated to reflect these new changes. So now the sprite is drawn correctly with the correct size, frame, animation and etc and the bounding box now also scales correctly around that one singular frame.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/animatedsprite.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/animatedsprite.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.h
+Modified : /students/nikkolas.diehl/GP2DFramework2019-SpaceInvaders/Debug/assets/settings.ini
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/Gifs/LeftWardsMovement.gif
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/Gifs/NotMoving.gif
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/Gifs/RightWardsMovement.gif
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/LeftWardsSheet.png
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/NotMoving.png
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/RightWardsSheet.png
+
+Revision: 907
+Author: bjy5305
+Date: Friday, 20 September 2019 12:03:32 PM
+Message:
+Fixed logo
+Added some dynamic things to backbuffer
+Added starter weapon file
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj.filters
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.h
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/Weapon.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SplashScreen.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Debug/assets/Images/autLogo.png
+Modified : /students/nikkolas.diehl/Really Warm/Release/assets/Images/autLogo.png
+
+Revision: 891
+Author: bjy5305
+Date: Thursday, 19 September 2019 11:55:54 PM
+Message:
+Release asset files corrected
+----
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Images/unclickedButton.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/Gifs
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/Gifs/LeftWardsMovement.gif
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/Gifs/NotMoving.gif
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/Gifs/RightWardsMovement.gif
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/LeftWardsSheet.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/NotMoving.png
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/SpriteSheets/RightWardsSheet.png
+Modified : /students/nikkolas.diehl/Really Warm/Release/assets/Images/autLogo.png
+
+Revision: 886
+Author: bjy5305
+Date: Thursday, 19 September 2019 5:50:55 PM
+Message:
+Just to note:
+- The game is now fully ready to start adding weapons, AI and effects. The physics engine can now process any given type of entity correctly. Custom code must be added to allow for picking up of weapons and a function: AttachItem() will be created to allow the player or AI to use weapons.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.h
+
+Revision: 885
+Author: bjy5305
+Date: Thursday, 19 September 2019 5:48:12 PM
+Message:
+Massively reformatted a lot of the engine.
+- Added an entityProcessingUnit which handles all the processing for every single entity against every other entity
+- This effectively shorted the processing and handling that the physics engine itself does by about 50-100 lines.
+- This also shorted the amount of work a scene has to do for processing by 10-20 lines
+- New formatting means that a single processing unit can handle every single entity, no matter the type of material of said entity.
+- This also splits up the execution of physical processing into two separate functions called ProcessEntityVelocity and ProcessEntityPosition
+- In between the two, the entityProcessingUnit checks for collision and now has the ability to resolve a given collision in many different ways other than surface resolution
+
+- Removed unused/unnecessary variables in the entity material class and just added one new enum for the entity type to determine if a given entity is a certain type and needs to collide in a certain way.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj.filters
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Material.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Material.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/EntityProcessingUnit.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.h
+
+Revision: 879
+Author: bjy5305
+Date: Tuesday, 17 September 2019 11:55:53 PM
+Message:
+Added scaling to the entities
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/sprite.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/sprite.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Added : /students/nikkolas.diehl/Documents/Barnsley Fern in p5js.png
+
+Revision: 875
+Author: bjy5305
+Date: Tuesday, 17 September 2019 6:56:30 PM
+Message:
+Added not moving gif and sprite sheet
+----
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/Gifs/NotMoving.gif
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/NotMoving.png
+
+Revision: 874
+Author: bjy5305
+Date: Tuesday, 17 September 2019 6:41:09 PM
+Message:
+- Added sprite sheets and gifs for movement left and right
+----
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/Gifs
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/Gifs/LeftWardsMovement.gif
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/Gifs/RightWardsMovement.gif
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/LeftWardsSheet.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/SpriteSheets/RightWardsSheet.png
+
+Revision: 869
+Author: bjy5305
+Date: Monday, 16 September 2019 5:03:02 PM
+Message:
+Added defines to everything.
+Push
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj.filters
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/inputhandler.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/inputhandler.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Material.h
+Deleted : /students/nikkolas.diehl/Really Warm/Really Warm/MainMenuScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/animatedsprite.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/sprite.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/WallController.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/iniParser.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/MainMenuScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/game.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/BoundingBox.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.h
+Deleted : /students/nikkolas.diehl/Really Warm/Really Warm/MenuScene.cpp
+Deleted : /students/nikkolas.diehl/Really Warm/Really Warm/MenuScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SplashScreen.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/logmanager.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/texture.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/texturemanager.h
+
+Revision: 863
+Author: bjy5305
+Date: Monday, 16 September 2019 3:00:17 PM
+Message:
+Abstracted the UIElement code so that any UIElement could be created from the class.
+Added main menu scene
+Added images for autLogo and unclickedButton
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj.filters
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Images
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/UIElement.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/UIElement.h
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/MainMenuScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SplashScreen.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/sprite.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/sprite.h
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/MainMenuScene.h
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Images/unclickedButton.png
+Added : /students/nikkolas.diehl/Really Warm/Debug/assets/Images/autLogo.png
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SplashScreen.h
+Deleted : /students/nikkolas.diehl/Really Warm/Really Warm/SplashScreenImage.cpp
+Deleted : /students/nikkolas.diehl/Really Warm/Really Warm/SplashScreenImage.h
+
+Revision: 850
+Author: bjy5305
+Date: Saturday, 14 September 2019 10:05:16 PM
+Message:
+Push from home
+
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+
+Revision: 849
+Author: bjy5305
+Date: Saturday, 14 September 2019 6:44:10 PM
+Message:
+- Added AUT splash screen for 3 seconds
+- Added splash screen image and new file filter for other menu items
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj.filters
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/SceneManager.h
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Images
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/SplashScreen.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/texturemanager.cpp
+Added : /students/nikkolas.diehl/Really Warm/Release/assets/Images/autLogo.png
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/SplashScreen.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/texturemanager.h
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/SplashScreenImage.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/SplashScreenImage.h
+
+Revision: 848
+Author: bjy5305
+Date: Saturday, 14 September 2019 5:22:35 PM
+Message:
+Gravity slightly increased to increase weight of movement.
+Jump and movement can now only be done when the player is on the ground and never when in air. Momentum from a jump is carried though and the character will have parabolic jump curves from naturally occurring forces.
+
+The physics engine also allows any other forces to affect the character that I want. I might add blackhole grenades, or wind or magnetic bullets or something.
+
+- Deleted some unused images
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Deleted : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/alienenemy.png
+Deleted : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/explosionDot.png
+Deleted : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/explosionGif.png
+Deleted : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/explosionParticle.png
+Deleted : /students/nikkolas.diehl/Really Warm/Debug/assets/Sprites/playerbullet.png
+Deleted : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/alienenemy.png
+Deleted : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/explosionDot.png
+Deleted : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/explosionGif.png
+Deleted : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/explosionParticle.png
+Deleted : /students/nikkolas.diehl/Really Warm/Release/assets/Sprites/playerbullet.png
+
+Revision: 847
+Author: bjy5305
+Date: Saturday, 14 September 2019 5:05:03 PM
+Message:
+Added wall textures back.
+They use a custom draw method now instead of the entity draw method
+
+Added customisation on the backBuffer end to check whether an entity wants to rotate around the 0,0 point or width/2, height/2
+All normal entities will rotate around width/2, height/2 so rotateNull is true. But walls will rotate around 0,0 so rotateNull for them is set to false
+
+Debug lines temporarily left in.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/WallController.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/inputhandler.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/backbuffer.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/sprite.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/sprite.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/texturemanager.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/WallController.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/iniParser.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/texturemanager.h
+
+Revision: 846
+Author: bjy5305
+Date: Saturday, 14 September 2019 3:59:24 PM
+Message:
+removed unnecessary bounding box functions to reduce function calls
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/BoundingBox.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/BoundingBox.h
+
+Revision: 845
+Author: bjy5305
+Date: Saturday, 14 September 2019 3:55:04 PM
+Message:
+Cleared some memory leaks with wall creations using vectors.
+Also made the inAir check more accurate.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/WallController.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/WallController.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.h
+
+Revision: 844
+Author: bjy5305
+Date: Saturday, 14 September 2019 3:35:27 PM
+Message:
+Split up the concept of a "collision box" and a "rectangle" into two different classes. BoundingBox.cpp is a sub class of Rectangle.cpp
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj.filters
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/BoundingBox.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/BoundingBox.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.h
+
+Revision: 841
+Author: bjy5305
+Date: Thursday, 12 September 2019 11:19:16 PM
+Message:
+Added full bound walls to finish off the scene. Physics is now 100% complete at this point.
+
+Next step probably on friday or over the weekend is to add the splash screen, add the main menu and add the weapons and maybe some particles
+I want to get at least the splash screen and main menu done by next week come monday, as well as putting the wall textures back in with proper rotations.
+
+Last push for the night
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/WallController.cpp
+
+Revision: 840
+Author: bjy5305
+Date: Thursday, 12 September 2019 11:14:58 PM
+Message:
+Collisions now fully working and working quite smoothly. Add back to 100 timestep processing
+Also added a simplistic version of the collision resolution so that if processing becomes intensive, I can use simpler version
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.h
+
+Revision: 839
+Author: bjy5305
+Date: Thursday, 12 September 2019 10:50:08 PM
+Message:
+Physics now fully works and collides with multiple walls at once and correctly from any given angle. There originally was a funny bug where the character could only collide down and right but it turned out to be because the central point of the entities weren't being updated.
+Now they are and collision works correctly. Just need to implement force culling for when you're in the air now
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.h
+
+Revision: 838
+Author: bjy5305
+Date: Thursday, 12 September 2019 10:31:54 PM
+Message:
+More physics work to allow collision with multiple elements
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/WallController.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.h
+
+Revision: 837
+Author: bjy5305
+Date: Thursday, 12 September 2019 9:59:36 PM
+Message:
+Physics Engine now has realistic collisions FINALLY. They have been properly implemented with forces, impulse and etc.
+
+WIP on inAir check now
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Material.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Material.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+
+Revision: 836
+Author: bjy5305
+Date: Thursday, 12 September 2019 8:52:55 PM
+Message:
+All casts are static. All casts are static_cast<type>(data)
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+
+Revision: 835
+Author: bjy5305
+Date: Thursday, 12 September 2019 8:52:13 PM
+Message:
+- 0 Errors in release and debug build
+- 0 Warnings in release and debug build
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+
+Revision: 834
+Author: bjy5305
+Date: Thursday, 12 September 2019 8:46:33 PM
+Message:
+- Added more vector2 math for MakeCeil and MakeFloor
+- Converted more pointers into smart pointers
+- Completely correctly calculating the minimum, maximum and each side of a rectangle
+- Added rectangle intersection overlap calculation and checking 
+(found here: https://www.ogre3d.org/docs/api/1.7/_ogre_axis_aligned_box_8h_source.html) under "intersection"
+- Added size calculation function for an overlap
+(found here: https://www.ogre3d.org/docs/api/1.7/_ogre_axis_aligned_box_8h_source.html) under "getSize"
+- Added rectangle calculate sides function
+- Added rectangle calculate collision normal function
+(found here: https://gamedev.stackexchange.com/questions/48816/how-to-calculate-collision-normal-between-two-axisalignedboxs)
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.h
+
+Revision: 833
+Author: bjy5305
+Date: Thursday, 12 September 2019 8:17:37 PM
+Message:
+- Impulse calculations WIP
+- Player and walls now correctly calculate the sides of overlap
+- More work on collision resolution
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.h
+
+Revision: 832
+Author: bjy5305
+Date: Thursday, 12 September 2019 5:57:44 PM
+Message:
+- Added smart pointers (std::unique_ptr) to all the vector2 math so that I can return new vectors in a much more powerful way without having any memory leakage
+- Removed entityCollision files
+- Added entity material class for all entity properties
+
+8 more memory leaks to remove which can now eventually be done with smart pointers
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj.filters
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/Material.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/Material.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.h
+Deleted : /students/nikkolas.diehl/Really Warm/Really Warm/entityCollisionFlag.cpp
+Deleted : /students/nikkolas.diehl/Really Warm/Really Warm/entityCollisionFlag.h
+
+Revision: 831
+Author: bjy5305
+Date: Thursday, 12 September 2019 4:51:39 PM
+Message:
+- Reverted quad tree for now to before new work was done on it
+- Removed collision flags
+- Hugely cleaned up vector2 math and added a clean method as well as other powerful methods
+- Working more on physics engine
+- Cleaned up entity
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj.filters
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/WallController.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.h
+
+Revision: 829
+Author: bjy5305
+Date: Wednesday, 11 September 2019 10:08:46 PM
+Message:
+last push for the night
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.h
+
+Revision: 828
+Author: bjy5305
+Date: Wednesday, 11 September 2019 9:54:10 PM
+Message:
+Working on quadtree
+
+https://gamedevelopment.tutsplus.com/tutorials/basic-platformer-physics-part-5-object-vs-object-collision-detection--cms-27594
+https://gamedevelopment.tutsplus.com/tutorials/basic-platformer-physics-part-6-object-vs-object-collision-response--cms-27604
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/InGameScene.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.h
+
+Revision: 827
+Author: bjy5305
+Date: Wednesday, 11 September 2019 9:01:08 PM
+Message:
+Collision detection finally working really well except for edge cases where a bounding box is very large.
+For this I will implement the quadtree that will handle only collisions within an area
+
+Added collision flag class file for pushing and moving objects that will be worked on.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Really Warm.vcxproj.filters
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Walls.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.h
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/entityCollisionFlag.cpp
+Added : /students/nikkolas.diehl/Really Warm/Really Warm/entityCollisionFlag.h
+
+Revision: 826
+Author: bjy5305
+Date: Wednesday, 11 September 2019 7:45:29 PM
+Message:
+More work.
+I struggle heavily with Vector math and cannot get collision to work at all.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/WallController.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.h
+
+Revision: 825
+Author: bjy5305
+Date: Wednesday, 11 September 2019 5:21:47 PM
+Message:
+Fixed destructor issue
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/entity.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.h
+
+Revision: 824
+Author: bjy5305
+Date: Wednesday, 11 September 2019 4:27:58 PM
+Message:
+Starting to add collision detection back in with extremely accurate detection.
+Collision resolving is now WIP
+
+Also, fixed MASSIVE memory leak that dumped so much memory it took over a minute to finish dumping.
+This was a very obvious memory leak but I was previously not creating new rectangles every frame, I was only creating them once. Now some of the collision math
+creates new rectangles that weren't being deleted correctly.
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.h
+
+Revision: 823
+Author: bjy5305
+Date: Wednesday, 11 September 2019 2:59:56 PM
+Message:
+
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Player.cpp
+
+Revision: 822
+Author: bjy5305
+Date: Wednesday, 11 September 2019 2:42:22 PM
+Message:
+- Fixed final Vector2 issue for now. Both Vector2::ScaleMult and Vector2::ScaleDiv are now static functions that never return or create new Vector2 objects
+- Added physics timeStep processing function and moved everything in accordance with euler's formula to smooth out the processing. Sitting at 100 timesteps right now
+- Cleaned up physics code
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.h
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.h
+
+Revision: 818
+Author: bjy5305
+Date: Tuesday, 10 September 2019 8:49:15 PM
+Message:
+Started reworking collision testing from
+https://www.toptal.com/game/video-game-physics-part-ii-collision-detection-for-solid-objects
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.h
+
+Revision: 817
+Author: bjy5305
+Date: Tuesday, 10 September 2019 8:42:15 PM
+Message:
+final push for the night. Fixed up some things and moved the log function out of the main process function
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.h
+
+Revision: 816
+Author: bjy5305
+Date: Tuesday, 10 September 2019 8:28:54 PM
+Message:
+Cleaned the majority of memory leaks I had
+----
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/PhysicsEngine.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Rectangle.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/QuadTree.cpp
+Modified : /students/nikkolas.diehl/Really Warm/Really Warm/Vector2.cpp
+

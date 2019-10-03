@@ -1,0 +1,5 @@
+Windows SDK version: 10.0.17763.0
+https://pivotanimator.net/Download.php
+https://www.khanacademy.org/test-prep/mcat/physical-sciences-practice/physical-sciences-practice-tut/e/physics-of-walking-and-running
+https://stackoverflow.com/questions/55158873/incorporate-time-delta-and-speed-into-velocity-friction-movement
+https://brilliant.org/wiki/friction/
