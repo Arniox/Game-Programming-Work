@@ -16,7 +16,7 @@ FWT - 16945724.zip
 *.log
 *.ipch
 *.obj
-*.exe
+
 *.lib
 *.suo
 *.user
@@ -41,3 +41,5 @@ FWT - 16945724.zip
 *.rej
 *~ #*# .#* .*.swp .DS_Store [Tt]humbs.db
 COMP710-2019-S2/.svn/wc.db
+COMP710-2019-S2/students/nikkolas.diehl/Really Warm/Debug/Really Warm.exe
+COMP710-2019-S2/students/nikkolas.diehl/Really Warm/Release/Really Warm.exe
