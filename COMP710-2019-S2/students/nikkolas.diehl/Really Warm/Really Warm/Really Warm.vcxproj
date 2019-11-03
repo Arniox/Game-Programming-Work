@@ -94,6 +94,9 @@
     <ClInclude Include="Weapon.h" />
     <ClInclude Include="WeaponManager.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{C17CBA48-7479-44CF-8FB1-D43C87E41FEC}</ProjectGuid>
@@ -195,6 +198,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\shared\API-SDL\SDL2_ttf-devel-2.0.15-VC\SDL2_ttf-2.0.15\include;$(SolutionDir)..\..\..\shared\API-SDL\SDL2-devel-2.0.10-VC\SDL2-2.0.10\include\;$(SolutionDir)..\..\..\shared\API-SDL\SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\include;$(SolutionDir)..\..\..\shared\API-FMOD\fmodstudioapi11014win-installer\api\lowlevel\inc</AdditionalIncludeDirectories>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -204,6 +208,9 @@
       <AdditionalLibraryDirectories>$(SolutionDir)..\..\..\shared\API-SDL\SDL2_ttf-devel-2.0.15-VC\SDL2_ttf-2.0.15\lib\x86;$(SolutionDir)..\..\..\shared\API-SDL\SDL2-devel-2.0.10-VC\SDL2-2.0.10\lib\x86;$(SolutionDir)..\..\..\shared\API-SDL\SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\lib\x86;$(SolutionDir)..\..\..\shared\API-FMOD\fmodstudioapi11014win-installer\api\lowlevel\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_TTF.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
