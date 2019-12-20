@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{8F4FD637-050D-4077-AC3D-ABC3116E3AA0}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Wheelspin</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\shared\API-SDL\SDL2-devel-2.0.10-VC\SDL2-2.0.10\include\;$(SolutionDir)..\..\..\shared\API-SDL\SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\include;$(SolutionDir)..\..\..\shared\API-SDL\SDL2_ttf-devel-2.0.15-VC\SDL2_ttf-2.0.15\include;$(SolutionDir)..\..\..\shared\API-FMOD\fmodstudioapi11014win-installer\api\lowlevel\inc;$(SolutionDir)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\..\shared\API-SDL\SDL2-devel-2.0.10-VC\SDL2-2.0.10\lib\x86;$(SolutionDir)..\..\..\shared\API-SDL\SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\lib\x86;$(SolutionDir)..\..\..\shared\API-SDL\SDL2_ttf-devel-2.0.15-VC\SDL2_ttf-2.0.15\lib\x86;$(SolutionDir)..\..\..\shared\API-FMOD\fmodstudioapi11014win-installer\api\lowlevel\lib;$(SolutionDir)Debug\;$(SolutionDir)Box2D\bin\x86\Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;Box2d.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\shared\API-SDL\SDL2-devel-2.0.10-VC\SDL2-2.0.10\include\;$(SolutionDir)..\..\..\shared\API-SDL\SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\include;$(SolutionDir)..\..\..\shared\API-SDL\SDL2_ttf-devel-2.0.15-VC\SDL2_ttf-2.0.15\include;$(SolutionDir)..\..\..\shared\API-FMOD\fmodstudioapi11014win-installer\api\lowlevel\inc;$(SolutionDir)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <SupportJustMyCode>true</SupportJustMyCode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\..\shared\API-SDL\SDL2-devel-2.0.10-VC\SDL2-2.0.10\lib\x86;$(SolutionDir)..\..\..\shared\API-SDL\SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\lib\x86;$(SolutionDir)..\..\..\shared\API-SDL\SDL2_ttf-devel-2.0.15-VC\SDL2_ttf-2.0.15\lib\x86;$(SolutionDir)..\..\..\shared\API-FMOD\fmodstudioapi11014win-installer\api\lowlevel\lib;$(SolutionDir)Debug\;$(SolutionDir)Box2D\bin\x86\Debug</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_ttf.lib;fmod_vc.lib;Box2D.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\..\..\shared\API-SDL\SDL2_ttf-devel-2.0.15-VC\SDL2_ttf-2.0.15\include;$(SolutionDir)..\..\..\shared\API-SDL\SDL2-devel-2.0.10-VC\SDL2-2.0.10\include\;$(SolutionDir)..\..\..\shared\API-SDL\SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\include;$(SolutionDir)..\..\..\shared\API-FMOD\fmodstudioapi11014win-installer\api\lowlevel\inc</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\..\..\shared\API-SDL\SDL2_ttf-devel-2.0.15-VC\SDL2_ttf-2.0.15\lib\x86;$(SolutionDir)..\..\..\shared\API-SDL\SDL2-devel-2.0.10-VC\SDL2-2.0.10\lib\x86;$(SolutionDir)..\..\..\shared\API-SDL\SDL2_image-devel-2.0.5-VC\SDL2_image-2.0.5\lib\x86;$(SolutionDir)..\..\..\shared\API-FMOD\fmodstudioapi11014win-installer\api\lowlevel\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>SDL2.lib;SDL2main.lib;SDL2_image.lib;SDL2_TTF.lib;fmod_vc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="animatedsprite.cpp" />
+    <ClCompile Include="AnimatedUI.cpp" />
+    <ClCompile Include="Arrow.cpp" />
+    <ClCompile Include="backbuffer.cpp" />
+    <ClCompile Include="BitMapReader.cpp" />
+    <ClCompile Include="Building.cpp" />
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Calc.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Car.cpp" />
+    <ClCompile Include="CarTest.cpp" />
+    <ClCompile Include="CarTest2.cpp" />
+    <ClCompile Include="CollideableObject.cpp" />
+    <ClCompile Include="Colors.cpp" />
+    <ClCompile Include="Constants.cpp" />
+    <ClCompile Include="DebugDraw.cpp" />
+    <ClCompile Include="DebugSquare.cpp" />
+    <ClCompile Include="entity.cpp" />
+    <ClCompile Include="FinishLine.cpp" />
+    <ClCompile Include="FontManager.cpp" />
+    <ClCompile Include="game.cpp" />
+    <ClCompile Include="GUI.cpp" />
+    <ClCompile Include="HudItem.cpp" />
+    <ClCompile Include="IniParser.cpp" />
+    <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="InstructionMenu.cpp" />
+    <ClCompile Include="Level.cpp" />
+    <ClCompile Include="LevelLoader.cpp" />
+    <ClCompile Include="LevelsManager.cpp" />
+    <ClCompile Include="logmanager.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="Particle.cpp" />
+    <ClCompile Include="ParticleEmitter.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="SoundManager.cpp" />
+    <ClCompile Include="SplashScreen.cpp" />
+    <ClCompile Include="sprite.cpp" />
+    <ClCompile Include="State.cpp" />
+    <ClCompile Include="StaticUI.cpp" />
+    <ClCompile Include="Test.cpp" />
+    <ClCompile Include="Test2.cpp" />
+    <ClCompile Include="Test51.cpp" />
+    <ClCompile Include="texture.cpp" />
+    <ClCompile Include="texturemanager.cpp" />
+    <ClCompile Include="UIElement.cpp" />
+    <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="Wheel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="animatedsprite.h" />
+    <ClInclude Include="AnimatedUI.h" />
+    <ClInclude Include="Arrow.h" />
+    <ClInclude Include="backbuffer.h" />
+    <ClInclude Include="BitMapReader.h" />
+    <ClInclude Include="Building.h" />
+    <ClInclude Include="Button.h" />
+    <ClInclude Include="Calc.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="Car.h" />
+    <ClInclude Include="CarTest.h" />
+    <ClInclude Include="CarTest2.h" />
+    <ClInclude Include="CollideableObject.h" />
+    <ClInclude Include="Colors.h" />
+    <ClInclude Include="Constants.h" />
+    <ClInclude Include="DebugDraw.h" />
+    <ClInclude Include="DebugSquare.h" />
+    <ClInclude Include="entity.h" />
+    <ClInclude Include="FinishLine.h" />
+    <ClInclude Include="FontManager.h" />
+    <ClInclude Include="game.h" />
+    <ClInclude Include="GUI.h" />
+    <ClInclude Include="HudItem.h" />
+    <ClInclude Include="IniParser.h" />
+    <ClInclude Include="InputDef.h" />
+    <ClInclude Include="InputManager.h" />
+    <ClInclude Include="InstructionMenu.h" />
+    <ClInclude Include="Level.h" />
+    <ClInclude Include="LevelLoader.h" />
+    <ClInclude Include="LevelsManager.h" />
+    <ClInclude Include="logmanager.h" />
+    <ClInclude Include="MainMenu.h" />
+    <ClInclude Include="Particle.h" />
+    <ClInclude Include="ParticleEmitter.h" />
+    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="SoundManager.h" />
+    <ClInclude Include="SplashScreen.h" />
+    <ClInclude Include="sprite.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="StaticUI.h" />
+    <ClInclude Include="Test.h" />
+    <ClInclude Include="Test2.h" />
+    <ClInclude Include="Test51.h" />
+    <ClInclude Include="texture.h" />
+    <ClInclude Include="texturemanager.h" />
+    <ClInclude Include="UIElement.h" />
+    <ClInclude Include="Vector2.h" />
+    <ClInclude Include="Wheel.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
